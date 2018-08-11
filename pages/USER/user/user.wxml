@@ -1,0 +1,77 @@
+
+<view>
+  <view class='user'>
+    <view class='user_bg'></view>
+    <view class='user_head'>
+      <view class='flex_between align_items'>
+        <view class='flex_row'>
+          <view class='user_avatar'>
+            <image class='user_avatar_border' src='../../../images/icon_user_avatar.png' />
+            <image class='user_avatar_img' src='{{userInfo.head_pic}}' mode="aspectFit"></image> 
+          </view>
+          <view wx:if="{{userInfo}}" >
+            <view class='user_name'>{{userInfo.nickname}}</view>
+            <view class='user_point'>积分：{{userInfo.pay_points}}</view>
+          </view>
+          <button plain="{{true}}" class='user_login' wx:if="{{!userInfo}}" 
+          open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">立即登录</button>
+        </view>
+        <navigator class='user_add' url="/pages/USER/address/address">
+        
+           <image src='../../../images/dingwei.png' mode="widthFix"></image>收货地址
+        </navigator>
+      </view>
+    </view>
+  </view>
+  
+  <!-- <view class='user_jifen'>
+    <image src='../../../images/jifen_banner.png' mode="aspectFit"></image>
+  </view> -->
+
+
+  <!-- 积分 -->
+   <!-- <swiper class='user_jifen' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" circular="{{true}}">
+    <block>
+      <swiper-item>
+        <navigator url='/pages/INTEGRAL/integral/integral'>
+          <image src='../../../images/jifen_banner.png' mode="aspectFit"></image>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>  -->
+
+  <view class='user_order'>
+    <view class='user_order_wrap flex_between align_items' bindtap='openUserNav' data-type="ALL">
+      <view class='user_order_t'>我的订单</view>
+      <view class='flex_row'>
+        <view class='user_order_b'>查看全部 > </view> 
+      </view>
+    </view>
+    <view class='order_item_wrap flex_between'>
+      <view class='order_item' wx:for="{{userNav}}" wx:key data-type="{{item.type}}" bindtap='openUserNav'>
+         <image src='{{item.src}}' mode='scaleToFill'></image> 
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  
+
+  <view class='user_list'>
+    <view class='list_item flex_between' wx:for="{{items}}" wx:key bindtap='tabList' data-index="{{index}}">
+      <view class='tc flex_row'>
+         <!-- <image class='refund' wx:if="{{item.src}}" src='{{item.src}}'></image>  -->
+        <view class='item_text'>{{item.name}}</view>
+      </view>
+      <view class='color_gray' style='font-size: 28rpx;'> > </view> 
+    </view> 
+
+    <view class='list_item flex_between'>
+      <view class='tc flex_row'>
+         
+        <view class='item_text'>联系客服</view>
+      </view>
+      <view class='color_gray' style='font-size: 28rpx;'> > </view> 
+      <button open-type='contact'></button>
+    </view> 
+  </view>
+</view>

@@ -1,0 +1,89 @@
+{
+  "pages":[
+    "pages/HOME/home/home",
+    "pages/HOME/comment/comment",
+    "pages/HOME/searchResult/searchResult",
+
+    "pages/HOME/fenxiao/fenxiao",
+
+    "pages/TYPE/type/type",
+    "pages/ADVANCE/advance/advance",
+
+    "pages/INTEGRAL/integral/integral",
+    "pages/INTEGRAL/payOrder/payOrder",
+    "pages/INTEGRAL/record/record",
+
+    "pages/KILL/kill/kill",
+    "pages/KILL/detail/detail",
+
+    "pages/TEAM/team/team",
+    "pages/TEAM/detail/detail",
+    "pages/TEAM/found/found",
+    "pages/TEAM/order/order",
+
+    "pages/CART/cart/cart",
+    "pages/CART/payOrder/payOrder",
+    "pages/CART/payment/payment",
+
+    
+    "pages/USER/addAddress/addAddress",
+    "pages/USER/address/address",
+    "pages/USER/user/user",
+    "pages/USER/logistic/logistic",
+    "pages/USER/orderDetail/orderDetail",
+    "pages/USER/orderCancel/orderCancel",
+    "pages/USER/returnGoods/returnGoods",
+    "pages/USER/order/order",
+    "pages/USER/collect/collect",
+    "pages/USER/afterSale/afterSale",
+    "pages/USER/pinglun/pinglun",
+    "pages/USER/refundOrder/refundOrder",
+    "pages/USER/notused/notused",
+    "pages/USER/refund/refund"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#79BBE4",
+    "navigationBarTitleText": "溜达猪",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#000000"
+  },
+  "tabBar": {
+    "color": "#BFBFBF",
+    "selectedColor": "#79BBE4",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/HOME/home/home",
+        "iconPath": "./images/icon_home_f.png",
+        "selectedIconPath": "./images/icon_home_t.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/TYPE/type/type",
+        "iconPath": "./images/icon_type_f.png",
+        "selectedIconPath": "./images/icon_type_t.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/HOME/fenxiao/fenxiao",
+        "iconPath": "./images/icon_fenxiao_f.png",
+        "selectedIconPath": "./images/icon_fenxiao_t.png",
+        "text": "分销"
+      },
+      {
+        "pagePath": "pages/CART/cart/cart",
+        "iconPath": "./images/icon_cart_f.png",
+        "selectedIconPath": "./images/icon_cart_t.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/USER/user/user",
+        "iconPath": "./images/icon_user_f.png",
+        "selectedIconPath": "./images/icon_user_t.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

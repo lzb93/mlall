@@ -1,0 +1,19 @@
+<!--pages/ADVANCE/advance/advance.wxml-->
+<view class='advance-li' wx:for="{{presellList}}" wx:key>
+   <image class='advance-left' src='{{host}}c=Goods&a=goodsThumImages&width=370&height=370&goods_id={{item.goods_id}}'></image>
+   <view class='advance-right'>
+       <view class='advance-title'>{{item.act_name}}</view>
+       <view class='advance-text'>预售价:<text class='red'>￥{{item.sale_price}}</text></view>
+       <view class='advance-text'>{{item.retainage_end}}发货</view>
+       <navigator class='advance-btn' url='/pages/KILL/detail/detail?id={{item.goods_id}}'>立即预定</navigator>
+   </view>
+</view>
+
+  <view class="weui-loadmore" wx:if="{{!isNomore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line" wx:if="{{isNomore}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多数据了</view>
+  </view>
+

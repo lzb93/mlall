@@ -1,0 +1,28 @@
+@import '../integral/integral.wxss';
+
+.record{
+
+
+}
+.record-li{
+    height:80rpx;
+    line-height: 80rpx;
+    padding:0 15rpx;
+    font-size:28rpx; 
+    background: #fff;
+    border-bottom: 1px solid #efefef;
+
+}
+.record-li .tr{
+  text-align: right;
+  float: right;
+  
+}
+.jifenhong{
+  font-size: 32rpx;
+  color: red;
+}
+.jifenlan{
+  font-size: 32rpx;
+  color: #37C842;
+}

@@ -1,0 +1,29 @@
+<view>
+  <view>
+    <view class='user_inte'>
+      <image class='avatar' src='{{userInfo.head_pic}}'></image>
+      <view style='color: #fff;'>
+        {{userInfo.pay_points}}
+        <text style='font-size: 22rpx; color: #fff;'>积分</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='record' wx:for="{{items}}" wx:key>
+      <view class='record-li' data-id="{{item.log_id}}">
+          {{item.desc}}
+          <text class='{{item.pay_points<0?"jifenlan":"jifenhong"}}' >{{item.pay_points}}</text>
+          <text class='tr'>{{item.change_time}}</text>
+       
+      </view>
+  </view>
+
+  <view class="weui-loadmore" wx:if="{{!isNomore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line" wx:if="{{isNomore}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多数据了！</view>
+  </view>
+</view>
