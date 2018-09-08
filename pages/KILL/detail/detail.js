@@ -1,4 +1,4 @@
-import { goodsInfo, goodsdetail, addCart, collectGoods, killActivity, distributHash } from '../../../services/API';
+import { goodsInfo, goodsdetail, addCart, collectGoods, killActivity, distributHash, presellInfo} from '../../../services/API';
 import { js_date_time } from '../../../utils/utils';
 
 const WxParse = require('../../../utils/wxParse/wxParse.js')
@@ -52,7 +52,9 @@ Page({
         this.setData({
           goodsContent: result.goods_content
         })
-        WxParse.wxParse('article', 'html', result.goods_content, this, 5);
+        WxParse.wxParse('article', 'html', result.goods_content, this, 0);
+      } else {
+        app.wxAPI.alert(msg)
       }
     })
   },
@@ -121,7 +123,7 @@ Page({
             remark: goodsInfo.goods_remark,
             img: goodsInfo.original_img,
             marketPrice: goodsInfo.market_price,
-            VIPPrice: goodsInfo.member_price,
+            VIPPrice: goodsInfo.shop_price,
             price: goodsInfo.shop_price
           }
 
@@ -169,6 +171,13 @@ Page({
           }
           app.statistics = this.data.goods.statistics;
           this.initSpec();
+        } else {
+          app.wxAPI.alert(msg)
+          .then(() => {
+            wx.switchTab({
+              url: `/pages/HOME/home/home`
+            })
+          })
         }
       })
       .catch(() => {
@@ -358,6 +367,7 @@ Page({
     }
     const from = this.data.from;
     const activeSpec = this.data.activeSpec;
+    console.log(this.data.hash)
     let params = {
       goods_id: activeSpec.goodsId,
       goods_num: activeSpec.num,

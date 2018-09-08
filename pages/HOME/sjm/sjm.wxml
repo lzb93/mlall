@@ -1,0 +1,2 @@
+<!--pages/TYPE/sjm/sjm.wxml-->
+<web-view src="https://whole.meilashidai.net/public/sjmy/release/html5/1438899331/" bindmessage="bindGetMsg"></web-view>

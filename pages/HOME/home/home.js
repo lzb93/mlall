@@ -14,6 +14,14 @@ Page({
     coupons: [],  //优惠券
     promotelist: [],  //秒杀
     teamList:[],  // 团购
+    article: [{ 
+      article_id:15,
+      title:"秒杀专区的公告！"
+      },
+      {
+        article_id: 15,
+        title: "拼团专区的公告！"
+      }],
     navTabs: [
       {
         src: '../../../images/icon_home_kill.png',
@@ -32,9 +40,39 @@ Page({
       },
       {
         url: '/pages/INTEGRAL/integral/integral',
-        src: '../../../images/icon_home_team.png',
+        // src: '../../../images/icon_home_team.png',
+        src: '../../../images/icon_home_zhekoumiaosha.png',
         name: '积分商城'
-      }
+      },
+      {
+        url: '/pages/TAOKE/taokezq/taokezq',
+        src: '../../../images/icon_home_cuxiao.png',
+        name: '淘客专区'
+      },
+      // {
+      //   url: 'appid',
+      //   src: '../../../images/icon_home_team.png',
+      //   name: '易茂林'
+      // },
+      {
+        url: '/pages/HOME/game/game',
+        src: '../../../images/icon_home_jifen.png',
+        name: '游戏抽奖'
+      },
+      {
+        src: '../../../images/icon_home_yuding.png',
+        name: '酒店预定'
+      },
+      {
+        src: '../../../images/icon_home_kanjia.png',
+        name: '砍价专区'
+      },
+      // {
+      //   url: '/pages/TAOKE/taokequan/taokequan',
+      //   src: '../../../images/icon_home_team.png',
+      //   name: '淘客quan'
+      // },
+
   
     ]
   },
@@ -115,7 +153,8 @@ Page({
         this.setData({
           banners: result.banner,
           first: result.first,
-          third: result.third
+          third: result.third,
+          article: result.article,
         })
       } else {
         app.wxAPI.alert(msg);
@@ -160,6 +199,20 @@ Page({
   tabList(e) {
     const index = e.currentTarget.dataset.index;
     const list = this.data.navTabs;
+    if (list[index].url=="appid"){
+      wx.navigateToMiniProgram({
+        appId: 'wxb0dd17fbf140965f',
+        path: 'pages/HOME/home/home',
+        extraData: {
+          foo: 'bar'
+        },
+        envVersion: 'develop',
+        success(res) {
+          // 打开成功
+        }
+      })
+      return;
+    }
     if(!list[index].url) {
       app.wxAPI.alert('该功能未开启！');
       return;
@@ -202,7 +255,7 @@ Page({
 
   onShareAppMessage(res) {
     return {
-      title: '首饰',
+      title: '美拉商城',
       path: '/pages/HOME/home/home'
     }
   }

@@ -177,12 +177,12 @@ export function returnGodds(params) {
 }
 //售后列表
 export function refundGoodsList(params) {
-  return post(config.host + 'c=user&a=return_goods_list', params)
+  return post(config.host + 'c=user&a=return_goods', params)
 }
-//退款列表
-export function refundOrderList(params) {
-  return post(config.host + 'c=order&a=return_goods_list', params)
-}
+// //退款列表
+// export function refundOrderList(params) {
+//   return post(config.host + 'c=order&a=return_goods_list', params)
+// }
 //查看物流
 export function getExpress(params) {
   return get(config.host + 'c=user&a=express', params)
@@ -263,4 +263,160 @@ export function distributIndex(params) {
 //       * money  提现金额
 export function distributWd(params) {
   return get(config.host + 'c=distribut&a=withdrawal', params)
+}
+
+
+// 微淘
+
+// 获取分类(导航栏)
+// index.php ? m = api & c=tao & a=getCat
+export function taogetCat(params) {
+  return get(config.host + 'c=tao&a=getCat', params)
+}
+
+
+// 获取列表
+// index.php ? m = api & c=tao & a=getList
+export function taogetList(params) {
+  return get(config.host + 'c=tao&a=getList', params)
+}
+
+
+// 获取单篇文章
+// index.php ? m = api & c=tao & a=getOne & article_id=get / post
+export function taogetOne(params) {
+  return get(config.host + 'c=tao&a=getOne', params)
+}
+
+// 获取评论
+// index.php ? m = api & c=tao & a=getComment & article_id=
+// get / post
+export function taogetComment(params) {
+  return get(config.host + 'c=tao&a=getComment', params)
+}
+
+// 发表评论post
+// index.php ? m = api & c=tao & a=addComment & article_id=
+// 必填参数content
+export function taoaddComment(params) {
+  return get(config.host + 'c=tao&a=addComment', params)
+}
+
+
+// 回复评论post
+// index.php ? m = api & c=tao & a=addAnswer & comment_id=
+// 必填参数content
+export function taoaddAnswer(params) {
+  return get(config.host + 'c=tao&a=addAnswer', params)
+}
+
+// 回复赞
+// article_id=
+
+export function taoaddZan(params) {
+  return get(config.host + 'c=tao&a=zan', params)
+}
+
+
+
+// 淘客专区  
+// 个人中心
+export function DistributPersonIndex(params) {
+  return get(config.host + 'c=DistributPerson&a=index', params)
+}
+
+// http://whole.meilashidai.net/index.php?m=api&c=DistributGoods&a=getCategory  获取分销分类信息，及全部分销商品
+export function DggetCategory(params) {
+  return get(config.host + 'c=DistributGoods&a=getCategory', params)
+}
+
+// http://whole.meilashidai.net/index.php?m=api&c=DistributGoods&a=getGoodsList&category_id={分类ID}  获取分销分类信息，及全部分销商品
+export function DggetGoodsList(params) {
+  return get(config.host + 'c=DistributGoods&a=getGoodsList', params)
+}
+
+
+// http://whole.meilashidai.net/index.php?m=api&c=DistributGoods&a=getGoodsInfo&goods_id={商品ID}  获取单个分销商品，及推荐分销商品
+export function DggetGoodsInfo(params) {
+  return get(config.host + 'c=DistributGoods&a=getGoodsInfo', params)
+}
+
+
+// shareCoupon  点击分享（返回hash
+export function DgshareCoupon(params) {
+  return get(config.host + 'c=DistributGoods&a=shareCoupon', params)
+}
+
+// getCoupon      领取优惠券界面
+export function DggetCoupon(params) {
+  return get(config.host + 'c=DistributGoods&a=getCoupon', params)
+}
+
+// /api/DistributPerson / withdrawal  申请提现             请求参数* account_bank 银行卡号
+//   * account_name 开户名
+//     * bank_name 银行名称
+//       * money  提现金额
+export function DistributPersonwd(params) {
+  return get(config.host + 'c=DistributPerson&a=withdrawal', params)
+}
+
+
+// 博饼   
+// http://whole.meilashidai.net/index.php?m=api&c=lottery&a=autumn  传入6骰子点数  data=[]
+
+export function lotteryautumn(params) {
+  return post(config.host + 'c=lottery&a=autumn', params)
+}
+// http://whole.meilashidai.net/index.php?m=api&c=lottery&a=addUser&lottery_id=奖品ID  领取奖品
+export function lotteryaddUser(params) {
+  return get(config.host + 'c=lottery&a=addUser', params)
+}
+
+//  whole.meilashidai.net/index.php?m=api&c=lottery&a=lotteryList   奖品列表
+export function lotteryList(params) {
+  return get(config.host + 'c=lottery&a=lotteryList', params)
+}
+
+//  whole.meilashidai.net/index.php?m=api&c=lottery&a=userList   获奖名单
+export function userList(params) {
+  return get(config.host + 'c=lottery&a=userList', params)
+}
+
+
+// 围住红包模块接口 
+// 获取游戏配置信息  index.php?m=api&c=enclose&a=index
+
+export function encloseindex(params) {
+  return get(config.host + 'c=enclose&a=index', params)
+}
+
+
+// 达到分数条件，领取奖品
+// index.php ? m = api & c=enclose & a=getPrize
+// 必填参数step(int)步数
+export function enclosegetPrize(params) {
+  return get(config.host + 'c=enclose&a=getPrize', params)
+}
+
+// 分享游戏，成功游戏次数 + 1
+// index.php ? m = api & c=enclose & a=share
+export function encloseshare(params) {
+  return get(config.host + 'c=enclose&a=share', params)
+}
+
+// 活动列表
+
+//lottery/user_list 抽奖用户列表
+export function lotteryurse(params) {
+  return post(config.host + 'c=lottery&a=userList', params)
+}
+
+//lottery/lottery_list 奖品列表
+export function lotterylist(params) {
+  return get(config.host + 'c=lottery&a=lotteryList', params)
+}
+
+///lottery/addUser 抽奖结果提交  lottery_id 奖品ID，username 联系人，mobile 联系电话
+export function lotteryadd(params) {
+  return get(config.host + 'c=lottery&a=addUser', params)
 }

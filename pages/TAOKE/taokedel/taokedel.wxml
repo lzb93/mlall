@@ -1,0 +1,95 @@
+<!--pages/TAOKE/taokedel/taokedel.wxml-->
+
+<view>
+  <view>
+    <view>
+      <!-- 轮播图 -->
+      <swiper class='swiper_wrap' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" circular="{{true}}">
+         <swiper-item>
+            <image src="{{http + goodsInfo.original_img}}" class="slide_image" />
+          </swiper-item>
+      </swiper>
+      <!-- 商品信息 -->
+      <view class='detail_inner clearfix'>
+        <view class='flex_between align_items'>
+          <view class='flex_row align_items'>
+            <view class='detail_m'>￥{{goodsInfo.coupon_price}}</view>
+             <view class='color_gray' style='text-decoration: line-through; font-size: 24rpx; margin-left: 15rpx;'>原价：￥{{goodsInfo.shop_price}}</view> 
+          </view>
+           <view class='detail_b'>优惠券：￥{{goodsInfo.money}}</view> 
+        </view>
+        <view class='detail_c tx_ov2'>{{goodsInfo.goods_name}}</view>
+        <view class='flex_between'>
+          <view style='font-size: 24rpx;'>
+            <view class='color_gray1'>佣金：￥{{goodsInfo.commission}}</view>
+
+          </view>
+          <view class='detail_p right'>销量{{goodsInfo.sales_sum}}笔  库存({{goodsInfo.store_count}}件)</view>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+
+  <view class='detail_detail'>
+    <view class='detail_header'>
+      <view class='detail_title'>推荐商品
+      </view>
+    </view>
+    <view> </view> 
+  </view>
+
+</view>
+
+<view class="footer flex_row">
+  <view class='footer_left flex_between'>
+    <navigator url='/pages/HOME/home/home' open-type="switchTab" class='shouye'>
+      <image src='../../../images/icon_home.png'></image>
+      <view>首页</view>
+    </navigator>
+    <view class='shouye'>
+      <image src='../../../images/icon_kf.png'></image>
+      <view>客服</view>
+      <button open-type='contact'></button>
+    </view>
+  </view>
+  
+  <view class='footer_right'>
+    <view class='flex_box'>
+      
+      <view class='footer_btn main_bg' bindtap='fenxiang'>分享</view> 
+    </view>
+  
+  </view>
+</view> 
+
+  <!-- 热卖 -->
+  <view class='layout' wx:if="{{recomment.length > 0}}">
+    <view class='layout_inner flex_between'>
+      <navigator class='product_item' wx:for="{{recomment}}" wx:key url='/pages/KILL/detail/detail?id={{item.goods_id}}'>
+        <view>
+          <image src='{{host}}c=Goods&a=goodsThumImages&width=740&height=740&goods_id={{item.goods_id}}' mode='aspectFit'></image>
+        </view>
+        <view class='product_content'>
+          <view class='item_text tx_ov'>{{item.goods_name}}</view>
+          
+          <view class='flex_between align_items' style='margin-top: 6rpx;'>
+            <view class='item_money color_red' style='margin-top: 6rpx;'>￥{{item.shop_price}}</view>
+            <view style='font-size: 22rpx;' class='color_gray'>销量 {{item.sales_sum}} 笔</view>
+          </view>
+          
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='pinlunalert' wx:if="{{fxalert}}">
+   <view>
+      <view class='fxtext'>分享商品给好友，下单成功立即获取佣金！</view>
+      <view>
+         <view class='albtn' bindtap='gbplalert'>取消</view>
+         <button class='albtn lv'  open-type="share">确定</button>
+
+      </view>
+   </view>
+</view>

@@ -1,0 +1,51 @@
+<!--pages/TAOKE/taokezq/taokezq.wxml-->
+  <swiper wx:if="{{banners.length > 0}}" class='swiper' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" 
+  circular="{{true}}">
+    <block>
+      <swiper-item wx:for="{{banners}}" wx:key wx:if="{{item.goods_id}}">
+        <navigator url='/pages/KILL/detail/detail?id={{item.goods_id}}'>
+          <image src="{{http + item.img}}"></image>
+        </navigator>
+      </swiper-item>
+      <swiper-item wx:for="{{banners}}" wx:key wx:if="{{!item.goods_id}}">
+        <view>
+          <image src="{{http + item.img}}"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+      <view class='nav_wrap flex_between'>
+        <view class='nav_item' wx:for="{{navs}}" wx:key>
+          <view class="nav_item_s {{activeType == item.id ? 'selected' : ''}}" 
+          data-type="{{item.id}}" bindtap='tabNavBar'>{{item.name}}</view>
+        </view>
+      </view>
+
+
+
+      <!-- SHOP -->
+
+      <view class='tk-row' wx:for="{{list}}" wx:key data-id="{{item.goods_id}}" >
+        <navigator url='../taokedel/taokedel?id={{item.goods_id}}&coupon_id={{item.coupon_id}}'>
+              <view class='tk-left'>
+                  <image src='{{http+item.original_img}}'></image>
+              </view>
+              <view class='tk-text'>
+                <view class='fz30'>{{item.goods_name}}</view>
+                <view class='fz24'><text class='fz24 ccc'>现价 ￥{{item.shop_price}}</text>   <text class='fz24 ccc' style=' margin-left: 15rpx;'>月销{{item.sales_sum}}件</text></view>
+                <view ><text class='fz24  ccc'>券后价</text><text class='fz24'>￥{{item.coupon_price}}</text></view>
+
+                <view class='quan-jd'><text class=' ccc'>券{{item.money}}元</text><text class=''>余{{item.createnum}}张</text></view>
+              
+              </view>
+              <view class='tk-right'>
+                  <image src='../../../images/tkfx.png'></image>
+                  <view class='tk-rtext'>赚￥{{item.commission}}</view>
+              </view>
+        
+        </navigator>
+      
+
+      </view>

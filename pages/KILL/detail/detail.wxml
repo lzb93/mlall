@@ -163,7 +163,7 @@
 
 <view class='pinlunalert' wx:if="{{fxalert}}">
    <view>
-      <view class='fxtext'>分享文章</view>
+      <view class='fxtext'>分享商品给好友，下单成功立即获取佣金！</view>
       <view>
          <view class='albtn' bindtap='gbplalert'>取消</view>
          <button class='albtn lv'  open-type="share">确定</button>

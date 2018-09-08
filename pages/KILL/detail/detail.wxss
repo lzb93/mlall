@@ -293,7 +293,7 @@ page {
   padding: 15rpx;
 }
 .lv{
-  background: #79BBE4;
+  background: #628DA3;
   color: #ffffff;
 }
 
@@ -304,7 +304,7 @@ text-align: center;
 line-height: 70rpx;
 font-size: 26rpx;
 background: #fff;
-color: #79BBE4
+color: #628DA3
 
   
 }

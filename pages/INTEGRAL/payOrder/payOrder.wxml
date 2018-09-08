@@ -38,7 +38,7 @@
       </view>
       <view class='flex_between' style='padding: 20rpx 25rpx; font-size: 26rpx; background: #fff;'>
         <view>合计：</view>
-        <view class='color_red'>{{goods.exchange_integral}} 积分</view>
+        <view class='color_red'>￥{{order_amount}}</view>
       </view>
     </view>
   </view>

@@ -1,0 +1,60 @@
+  <view class=''>
+     <image class='quanbg' src='../../../images/bg.png' mode='widthFix'></image>
+     <!-- <view class=''>yonghu</view> -->
+     <image class='quans' src='../../../images/quan.png'  mode='widthFix'></image>
+     <view class='quans_text'>
+        <view class='fz36'>￥{{coupon.money}}</view>
+        <view class=''>使用期限</view>
+        <view class='fz18'>{{start_time}}~{{end_time}}</view>
+     </view>
+
+     <view class='yhq_btn' bindtap='getCouponbtn'>领取</view>
+  
+  </view>
+  
+  <!-- shop -->
+
+
+    <view class='tk-row' wx:for="{{recomment}}" wx:key data-id="{{item.goods_id}}" >
+        <navigator url='/pages/KILL/detail/detail?id={{item.goods_id}}&hash={{hash}}'>
+              <view class='tk-left'>
+                  <image src='{{http+item.original_img}}'></image>
+              </view>
+              <view class='tk-text'>
+                <view class='fz30'>{{item.goods_name}}</view>
+                <view class='fz24'><text class='fz24 ccc'>现价 ￥{{item.shop_price}}</text>   <text class='fz24 ccc' style=' margin-left: 15rpx;'>月销{{item.sales_sum}}件</text></view>
+                <view ><text class='fz24  ccc'>券后价</text><text class='fz24'>￥{{item.coupon_price}}</text></view>
+
+                <view class='quan-jd'><text class=' ccc'>券{{item.money}}元</text><text class=''>余{{item.createnum}}张</text></view>
+              
+              </view>
+              <view class='tk-right'>
+                  <image src='../../../images/tkfx.png'></image>
+                  <view class='tk-rtext'>赚￥{{item.commission}}</view>
+              </view>
+        
+        </navigator>
+      
+
+      </view>
+
+
+  <!-- 热卖 -->
+  <view class='layout' wx:if="{{recommentlist.length > 0}}">
+    <view class='layout_inner flex_between'>
+      <navigator class='product_item' wx:for="{{recommentlist}}" wx:key url='/pages/KILL/detail/detail?id={{item.goods_id}}&hash={{hash}}'>
+        <view>
+          <image src='{{host}}c=Goods&a=goodsThumImages&width=740&height=740&goods_id={{item.goods_id}}' mode='aspectFit'></image>
+        </view>
+        <view class='product_content'>
+          <view class='item_text tx_ov'>{{item.goods_name}}</view>
+          
+          <view class='flex_between align_items' style='margin-top: 6rpx;'>
+            <view class='item_money color_red' style='margin-top: 6rpx;'>￥{{item.shop_price}}</view>
+            <view style='font-size: 22rpx;' class='color_gray'>销量 {{item.sales_sum}} 笔</view>
+          </view>
+          
+        </view>
+      </navigator>
+    </view>
+  </view>

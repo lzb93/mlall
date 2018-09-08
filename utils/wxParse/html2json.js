@@ -153,7 +153,13 @@ function html2json(html, bindName) {
                     imgUrl.splice(0, 1);
                 }
                 imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
-                node.attr.src = app.http + imgUrl;
+                // node.attr.src = app.http + imgUrl;
+                
+                if (imgUrl.search(RegExp("/http/"))) {
+                  node.attr.src = imgUrl;
+                }else{
+                  node.attr.src = app.http + imgUrl;
+                }
                 node.from = bindName;
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);

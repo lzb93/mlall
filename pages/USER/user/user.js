@@ -29,13 +29,23 @@ Page({
         src: '../../../images/icon_user_finish.png',
         name: '待评论'
       },
-      {
-        type: 'RETURN',
-        src: '../../../images/icon_user_tui.png',
-        name: '退款列表'
-      }
+      // {
+      //   type: 'RETURN',
+      //   src: '../../../images/icon_user_tui.png',
+      //   name: '退款列表'
+      // }
     ],
     items: [
+      {
+        name: '淘客中心',
+        src: '../../../images/icon_user_yongjin.png',
+        url: '/pages/TAOKE/taokehome/taokehome'
+      },
+      {
+        name: '分销中心',
+        src: '../../../images/icon_user_yongjin.png',
+        url: '/pages/HOME/fenxiao/fenxiao'
+      },
       // {
       //   name: '我的秒杀',
       //   src: '../../../images/icon_user_miaosha.png',
@@ -62,11 +72,11 @@ Page({
         url: '/pages/INTEGRAL/record/record'
         // url: '/pages/INTEGRAL/integral/integral'
       },
-      {
-        name: '退款列表',
-        src: '../../../images/icon_user_tui.png',
-        url: '/pages/USER/refundOrder/refundOrder'
-      },
+      // {
+      //   name: '退款列表',
+      //   src: '../../../images/icon_user_tui.png',
+      //   url: '/pages/USER/refundOrder/refundOrder'
+      // },
       {
         name: '售后/换货',
         src: '../../../images/icon_user_help.png',
@@ -74,9 +84,14 @@ Page({
       },
       {
         name: '商品收藏',
-        src: '../../../images/icon_user_shoucang.png',
+        src: '../../../images/icon_user_soucang.png',
         url: '/pages/USER/collect/collect'
       },
+      // {
+      //   name: '博饼小游戏',
+      //   src: '../../../images/icon_user_kefu.png',
+      //   url: '/pages/HOME/bobing/bobing'
+      // }
       // {
       //   name: '联系客服',
       //   src: '../../../images/icon_user_kefu.png',
@@ -121,11 +136,11 @@ Page({
     }
   },
   tabList(e) {
-    let token = app.token;
-    if (!token) {
-      app.wxAPI.alert('未登录!')
-      return
-    }
+    // let token = app.token;
+    // if (!token) {
+    //   app.wxAPI.alert('未登录!')
+    //   return
+    // }
     const index = e.currentTarget.dataset.index;
     const items = this.data.items;
     wx.navigateTo({

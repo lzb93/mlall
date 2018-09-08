@@ -1,0 +1,118 @@
+/* pages/TAOKE/taokezq/taokezq.wxss */
+
+/* banner图 */
+.swiper {
+  width: 100%;
+  height: 400rpx;
+}
+.swiper image {
+  display: block;
+  width: 100%;
+  height: 400rpx;
+  background-color: #fff;
+}
+/* nav */
+.nav_wrap {
+
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #E5E5E5;
+  background-color: #fff;
+  overflow: scroll;
+  white-space:nowrap;
+  
+}
+
+.nav_item {display: inline-block;float:left;font-size: 28rpx; white-space:nowrap;width: 150rpx;}
+.nav_item .nav_item_s {height: 80rpx; margin: 0 25rpx; line-height: 80rpx; color: #B7B7B7;}
+.nav_item .nav_item_s.selected {border-bottom: 4rpx solid #666; color: #666;}
+
+
+/* shop */
+.tk-row{
+  width: 720rpx;
+  margin: 15rpx;
+  background: #fff;
+  overflow: hidden;
+  padding: 15rpx;
+  border-radius:10px;
+
+}
+.tk-row image{
+  width: 170rpx;
+  height: 170rpx;
+  overflow: hidden
+}
+.tk-left{
+  width: 170rpx;
+  float: left;
+
+}
+.tk-text{
+  width: 370rpx;
+    float: left;
+  
+}
+.tk-right{
+  width: 150rpx;
+    float: left;
+  text-align: center;
+
+  
+}
+.tk-right image{
+  width:62rpx;
+  height:62rpx;
+  margin-top: 30rpx;
+}
+.tk-rtext{
+  font-size: 30rpx;
+  color:rgba(226,72,31,1);
+}
+
+.fz24{
+  font-size: 24rpx;
+}
+.fz30{
+  font-size: 30rpx;
+}
+.ccc{
+  color: #ccc;
+}
+.tk-text .fz30{
+  line-height: 50rpx;
+  margin-bottom: 10rpx;
+}
+.tk-text view{
+  line-height: 35rpx;
+  padding-left: 15rpx;
+}
+.tk-text .quan-jd{
+  background: #B0C6D1;
+  border-radius:10px;
+  width: 90%;
+  height: 25rpx;
+  line-height: 3rpx;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+
+  text-align: center;
+  margin: 10rpx 15rpx ;
+}
+.quan-jd text{
+  font-size: 16rpx;
+  height: 32rpx;
+
+
+}
+.quan-jd .ccc{
+  background: #628DA3;
+  padding:0 15rpx; 
+  position: absolute;
+  top: 0;
+  left: 0rpx;
+  line-height:25rpx;
+  display: inline-block;
+
+}

@@ -3,8 +3,13 @@
     "pages/HOME/home/home",
     "pages/HOME/comment/comment",
     "pages/HOME/searchResult/searchResult",
-
+    "pages/HOME/article/article",
     "pages/HOME/fenxiao/fenxiao",
+    "pages/HOME/bobing/bobing",
+    "pages/HOME/sjm/sjm",
+    "pages/HOME/game/game",
+    "pages/HOME/sjmindex/sjmindex",
+    "pages/HOME/choujiang/choujiang",
 
     "pages/TYPE/type/type",
     "pages/ADVANCE/advance/advance",
@@ -23,7 +28,17 @@
 
     "pages/CART/cart/cart",
     "pages/CART/payOrder/payOrder",
-    "pages/CART/payment/payment",
+    "pages/CART/payment/payment",  
+
+    "pages/WEITAO/weitao/weitao",
+    "pages/WEITAO/wtdel/wtdel",
+    "pages/WEITAO/wtpinglun/wtpinglun",
+
+    "pages/TAOKE/taokezq/taokezq",
+    "pages/TAOKE/taokehome/taokehome",
+    "pages/TAOKE/taokedel/taokedel",
+    "pages/TAOKE/taokequan/taokequan",
+
 
     
     "pages/USER/addAddress/addAddress",
@@ -43,14 +58,14 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#79BBE4",
-    "navigationBarTitleText": "溜达猪",
+    "navigationBarBackgroundColor": "#628DA3",
+    "navigationBarTitleText": "美拉商城",
     "navigationBarTextStyle":"white",
     "backgroundColor": "#000000"
   },
   "tabBar": {
     "color": "#BFBFBF",
-    "selectedColor": "#79BBE4",
+    "selectedColor": "#628DA3",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [
@@ -67,10 +82,10 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/HOME/fenxiao/fenxiao",
-        "iconPath": "./images/icon_fenxiao_f.png",
-        "selectedIconPath": "./images/icon_fenxiao_t.png",
-        "text": "分销"
+        "pagePath": "pages/WEITAO/weitao/weitao",
+        "iconPath": "./images/icon_weitao_f.png",
+        "selectedIconPath": "./images/icon_weitao_t.png",
+        "text": "微淘"
       },
       {
         "pagePath": "pages/CART/cart/cart",

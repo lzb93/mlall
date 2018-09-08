@@ -4,7 +4,7 @@
    <view class='advance-right'>
        <view class='advance-title'>{{item.act_name}}</view>
        <view class='advance-text'>预售价:<text class='red'>￥{{item.sale_price}}</text></view>
-       <view class='advance-text'>{{item.retainage_end}}发货</view>
+       <view class='advance-text'>{{item.deliver_goods}}</view>
        <navigator class='advance-btn' url='/pages/KILL/detail/detail?id={{item.goods_id}}'>立即预定</navigator>
    </view>
 </view>

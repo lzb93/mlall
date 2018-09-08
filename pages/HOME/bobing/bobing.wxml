@@ -1,0 +1,64 @@
+<!--pages/HOME/bobing/bobing.wxml-->
+<image src='../../../images/bb/bb_bg.png' mode='Fixwidth' class='tu-bg'></image>
+
+<view class="shaizi_tu">
+		<image wx:for="{{bbimg}}" wx:key src="../../../images/bb/bb_{{item}}.png" ></image>
+		<!-- <image src="../../../images/bb/bb_2.png" ></image>
+		<image src="../../../images/bb/bb_3.png" ></image>
+		<image src="../../../images/bb/bb_4.png" ></image>
+		<image src="../../../images/bb/bb_5.png" ></image>
+		<image src="../../../images/bb/bb_6.png" ></image> -->
+	</view>
+
+  <view class='bb_wan'>
+    <view  wx:if="{{bbgifwarp}}">
+       <image class='bb_gif' wx:if="{{bbgif}}" mode='widthFix' src='../../../images/bb/bb_gif1.png'></image>
+       <image class='bb_gif' mode='widthFix' wx:else src='../../../images/bb/bb_gif2.png'></image>
+    </view>
+    <image src='../../../images/bb/bb_wan.png'></image>
+  </view>
+  <view style='height:120rpx;'>
+    <button class='bb_btn' bindtap='star' wx:if="{{bbstar}}">开始</button>
+  </view>
+
+  <view class='bb_bghui' wx:if="{{bbalert}}"></view>
+  <view class='bb_alert' wx:if="{{bbalert}}">
+     <view class='bb_h3'>中秋博饼</view> 
+     <image class='gbal' src='../../../images/bb/bb_gb.png' bindtap='cJguanbi'></image> 
+     <view class='bb_p' wx:if="{{bbGb}}">恭喜摇到了 {{bbjosn.rulename}} 获得奖品：{{bbjosn.lottery_name}}</view>
+     <view class='bb_p' wx:else>什么都没摇到，下次继续加油！</view>
+     <view class='albtn-warp'>
+        <view class='albtn ju' bindtap='cJguanbi'>再玩一次</view>
+        <view class='albtn'>分享给朋友</view>
+        <button open-type="share" class='albtn lang'>分享给朋友</button>
+     </view>
+
+     
+  
+  </view>
+
+   <view class='notice flex_between' wx:if="{{article.length > 0}}">
+    <view class='no'>时时榜单</view>
+
+    <swiper class='notice_wrap' vertical='{{true}}' circular='{{true}}' autoplay='{{true}}' interval='{{4000}}'>
+      <block wx:for="{{article}}" wx:key>
+        <swiper-item>
+          <navigator url='/pages/HOME/article/article?id={{item.user_id}}'>
+            <view class='no_title' bindtap=''>{{item.user.nickname}}抽中{{item.lottery.name}}</view>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+      <view class='cj-alert' wx:if="{{alertcj}}">
+       <form  bindsubmit="formSubmit" bindreset="formReset">
+           <view>
+              <input placeholder='用户名'  name="userName" type="text"></input>
+              <input placeholder='联系电话'  name="tel" type="text"></input>
+              <input placeholder='收货地址'  name="address" type="text"></input>
+            </view>
+            <button class='cJguanbi' style='bottom:100rpx;background:#F887BB'  formType="submit">确认领奖</button>
+            <view class='cJguanbi' catchtap='alertgb'>放弃奖品</view>
+       </form>
+      </view>

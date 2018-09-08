@@ -1,0 +1,19 @@
+page {
+  background-color: #fff;
+}
+.article_title {
+  padding: 40rpx 0;
+  background-color: #F8F8F8;
+  font-size: 30rpx;
+  text-align: center;
+}
+.article_text {
+  padding: 20rpx 25rpx;
+}
+.article_text image {
+  display: block;
+  margin: 0 auto;
+}
+.article_text view {
+  font-size: 24rpx;
+}

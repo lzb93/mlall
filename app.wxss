@@ -28,6 +28,15 @@ view, navigator, image, input, scroll-view, text {
 .left {
   float: left;
 }
+.tr{
+  text-align:right;
+}
+.tc{
+  text-align:center;
+}
+.tl{
+  text-align:left;
+}
 .none {
   display: none !important;
 }
@@ -68,7 +77,7 @@ view, navigator, image, input, scroll-view, text {
   color: #806330 !important;
 }
 .main_bg {
-   background: #79BBE4 !important; 
+   background: #628DA3 !important; 
   /* background: linear-gradient(#E9BD6F, #806330);  */
 }
 .color_gray {

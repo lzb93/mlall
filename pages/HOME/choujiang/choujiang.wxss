@@ -1,0 +1,259 @@
+/* pages/HOME/choujiang/choujiang.wxss */
+page {
+	background: #fff;
+}
+
+.header{
+	padding: 1rem 0;
+	text-align: center;
+}
+.main{
+  width: 750rpx;
+  overflow: hidden;
+  padding-top:50rpx; 
+}
+.header-title{
+	display: block;
+	padding: .4rem 0;
+	font-size: 2rem;
+  color:#F887BB;
+}
+.header-subtitle{
+	color: #999;
+}
+
+.tu-bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -3
+}
+.zhuang-bg{
+    width:700rpx;
+    height:800rpx;
+    position:absolute;
+    z-index:1;
+    left:-60rpx;
+    margin-top:-41rpx;
+
+
+
+}
+.main-container-btn button{
+    background: #F887BB;
+    color: #ffffff;
+   
+}
+
+
+/* 转盘 */
+.canvas-container ul,
+.canvas-container li{
+  margin: 0 ;
+  padding: 0;
+  list-style: none;
+}
+
+.canvas-container{
+  margin: 0 auto;
+  position: relative;
+  z-index: 9;
+  width: 600rpx;
+  height: 600rpx;  
+  border-radius: 50%;
+  /*border: 2px solid #E44025;*/
+  margin-bottom:200rpx;
+  /* box-shadow: 0 2px 3px #333,
+              0 0 2px #000; */
+              
+}
+.canvas-content{
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:1;
+  display:block;
+  width:584rpx;
+  height:584rpx;
+  border-radius:inherit;
+  background-clip:padding-box;
+  background-color:#ffdfee;
+  /* 96dfe5 */
+  margin:5px;
+
+}
+.canvas-element{
+  position: relative;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.canvas-list{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 9999;
+}
+.canvas-item{
+  position: absolute;
+  left: 0;
+  top: 0;
+  
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  /* font-weight: bold; */
+  /* text-shadow: 0 1px 1px rgba(255,255,255,.6); */
+}
+.canvas-item-text{
+  position: relative;
+  display: block;
+  padding-top: 20px;
+  /* width: 50px; */
+  margin: 0 auto;
+  text-align: center; 
+  -webkit-transform-origin: 50% 150px; 
+  transform-origin: 50% 150px;
+}
+
+/* 分隔线 */
+.canvas-line{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 99;
+}
+.canvas-litem{
+  position: absolute;
+   left: 150px;
+   top: 0;
+   width: 1px;
+   height: 150px;
+   background-color: rgba(228,55,14,.4);
+   overflow: hidden; 
+   -webkit-transform-origin: 50% 150px; 
+   transform-origin: 50% 150px;
+}
+
+
+.canvas-btn{
+  position: absolute;
+  left: 210rpx;
+  top: 210rpx;
+  z-index: 400;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  color: #F4E9CC;
+  background-color: #E44025;
+  line-height: 180rpx;
+  text-align: center;
+  font-size: 40rpx;
+  text-shadow: 0 -1px 1px rgba(0,0,0,.6);
+  box-shadow: 0 3px 5px rgba(0,0,0,.6);
+  text-decoration: none;
+}
+.canvas-btn::after{
+  position: absolute;
+  display: block;
+  content: ' ';
+  left: 37rpx;
+  top: -85rpx;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 28px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #E44025; 
+}
+.canvas-btn.disabled{
+    pointer-events: none;
+    background: #B07A7B;
+    color: #ccc;
+}
+.canvas-btn.disabled::after{
+  border-bottom-color: #B07A7B;
+}
+
+
+.gb-run{ 
+    -webkit-transition: all 6s ease;
+    transition: all 6s ease;
+}
+
+
+/* 查看中奖 */
+.main-container{
+	margin: 1rem 2rem;
+}
+
+.main-container-rule{
+	padding: 1rem 0;
+}
+.main-rule-title{
+	display: block;
+	padding: 4px 0;
+	font-size: 16px;
+	font-weight: bold;
+}
+.main-rule-item{
+	display: block;
+	padding: 2px 0;
+}
+
+
+.cj-alert{
+  position: fixed;
+  width: 680rpx;
+  height:550rpx;
+  background: #fff;
+  box-shadow: 3px 3px 20px #FF97C7;
+  border-radius: 8px;
+  top: 300rpx;
+  left: 35rpx; 
+  z-index: 9999;
+}
+.cj-li{
+  width: 640rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding:0 15rpx;
+  margin: 20rpx;
+  border-bottom: 1px solid #ffdfee;
+}
+.cj-li text{
+  text-align: right;
+  float: right;
+  color: green;
+}
+.cJguanbi{
+  width: 100%;
+  background: #FADDE2;
+  text-align: center;
+  line-height: 80rpx;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 3px 3px 8px #FF97C7;
+  left: 0;
+
+}
+.cj-alert input{
+  width: 90%;
+  height: 90rpx;
+  padding-left: 15rpx;
+  margin: 15rpx 5%;
+  border: 1px solid #dcdcdc;
+  line-height: 90rpx;
+}
+
+.cj-alert-new{
+  height:360rpx;
+  overflow-y: scroll
+
+}

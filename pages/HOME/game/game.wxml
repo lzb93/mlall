@@ -1,0 +1,15 @@
+<!--pages/HOME/game/game.wxml-->
+<view>
+      <navigator class='item flex_between' url='/pages/HOME/bobing/bobing'>
+        <view class='title'>中秋博饼</view>
+        <view class='color_gray'> > </view>
+      </navigator>  
+      <navigator class='item flex_between' url='../sjmindex/sjmindex'>
+        <view class='title'>围住红包</view>
+        <view class='color_gray'> > </view>
+      </navigator> 
+      <navigator class='item flex_between' url='../choujiang/choujiang'>
+        <view class='title'>抽奖大转盘</view>
+        <view class='color_gray'> > </view>
+      </navigator> 
+</view>

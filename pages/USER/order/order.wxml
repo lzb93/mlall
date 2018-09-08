@@ -31,7 +31,7 @@
 
       <view class='{{item.pay_name ? "flex_between":""}}' style='padding: 10rpx 25rpx 20rpx;'>
         <view class='seller_m' wx:if="{{item.pay_name}}"><text class='color_gray'>付款方式：</text>{{item.pay_name}}</view>
-        <view class='seller_m'>共{{item.order_goods.length}}件商品 合计：￥{{item.goods_price}}</view>
+        <view class='seller_m'>共{{item.order_goods.length}}件商品 合计：￥{{item.order_amount}}</view>
       </view>
       
     </view>

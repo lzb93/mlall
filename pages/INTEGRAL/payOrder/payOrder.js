@@ -5,7 +5,8 @@ Page({
   data: {
     http: app.http,
     host: app.host,
-    loading: false
+    loading: false,
+    order_amount:"",
   },
   onLoad(options) {
     //判断是否会员
@@ -68,6 +69,9 @@ Page({
     integral2(params)
       .then(({status, result, msg}) => {
         if(status == 1) {
+          this.setData({
+            order_amount: result.order_amount
+          })
 
         } else if(status == 0) {
           app.wxAPI.alert('账户积分不足！')

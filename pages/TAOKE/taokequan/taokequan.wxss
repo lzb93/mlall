@@ -1,0 +1,45 @@
+/* pages/TAOKE/taokequan/taokequan.wxss */
+@import '../../HOME/home/home.wxss';
+@import '../taokezq/taokezq.wxss';
+.quanbg{
+  width: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -2;
+
+}
+.quans{
+  width:375rpx;
+  position: absolute;
+  top:120rpx;
+  left: 188rpx;
+    z-index: -1;
+}
+.quans_text{
+  margin-left: 230rpx;
+  margin-top:30rpx;
+  margin-bottom:180rpx;
+
+}
+
+.quans_text view{
+  color: #fff;
+  font-size: 22rpx;
+
+}
+.quans_text .fz36{
+   font-size: 36rpx; 
+}
+.quans_text .fz18{
+   font-size: 18rpx; 
+}
+.yhq_btn{
+  position: absolute;
+  top:160rpx;
+  left:450rpx;
+  color: #fff;
+  width:118px;
+  height:28px;
+  font-size:35rpx;
+}

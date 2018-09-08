@@ -1,0 +1,74 @@
+<!--pages/HOME/choujiang/choujiang.wxml-->
+<!--pages/HOME/choujiang/choujiang.wxml-->
+<image src='../../../images/tu-bg.png' class='tu-bg'></image>
+<view class="wrapper">
+
+	<view class="header">
+		<text class="header-title"> 大转盘抽奖 </text>
+		<!-- <text class="header-subtitle">  感恩节活动大抽奖，反馈广大客户 </text>  -->
+	</view>
+
+
+	<view class="main">
+		<view class="canvas-container">
+      <image src='../../../images/deng.png' class='zhuang-bg'></image>
+			<view  animation="{{animationData}}" class="canvas-content" > 
+
+				<canvas style="width: 300px; height: 300px;" class="canvas-element" canvas-id="lotteryCanvas"></canvas>
+
+				<view class="canvas-line">
+					<view class="canvas-litem" wx:for="{{awardsList}}" wx:key="unique" style="-webkit-transform: rotate({{item.lineTurn}});transform: rotate({{item.lineTurn}})"></view>
+				</view>
+
+				<view class="canvas-list">
+					<view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
+				  		<view class="canvas-item-text" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">{{item.award}}</view>
+					</view>
+				</view>
+
+				
+			</view>
+
+			<view bindtap="getLottery" class="canvas-btn {{btnDisabled}}">抽奖</view>		
+		</view>
+
+		<view class="main-container">
+			<view class="main-container-btn">
+				<button bindtap="zjlist" >查看中奖</button>	
+        <!-- <button bindtap="gotoList" type="primary">查看中奖</button>	 -->
+			</view>
+			<!-- <view class="main-container-rule">
+				<text class="main-rule-title">活动规则：</text>
+				<text class="main-rule-item">1. xxxxxxxxxxx</text>
+				<text class="main-rule-item">2. xxxxxxxxxxx</text>	
+				<text class="main-rule-item">3. xxxxxxxxxxx</text>	
+				<text class="main-rule-item">4. xxxxxxxxxxx</text>	
+				<text class="main-rule-item">5. xxxxxxxxxxx</text>	
+			</view>	 -->
+
+      <view class='cj-alert' wx:if="{{cjalert}}" >
+        <view class='cj-alert-new ' >
+           <view class='cj-li' wx:for="{{lotteryurse}}">{{item.lottery.name}} <text>{{item.grantText}}</text></view>
+
+        </view>
+        <view class='cJguanbi' catchtap='cJguanbi'>关闭</view>
+      </view>
+
+      <view class='cj-alert' wx:if="{{alertcj}}">
+       <form  bindsubmit="formSubmit" bindreset="formReset">
+           <view>
+              <input placeholder='用户名'  name="userName" type="text"></input>
+              <input placeholder='联系电话'  name="tel" type="text"></input>
+              <input placeholder='收货地址'  name="address" type="text"></input>
+            </view>
+            <button class='cJguanbi' style='bottom:100rpx;background:#F887BB'  formType="submit">确认领奖</button>
+            <view class='cJguanbi' catchtap='cJguanbi'>放弃奖品</view>
+       </form>
+      </view>
+
+		</view>
+
+	</view>
+ 
+</view>
+
