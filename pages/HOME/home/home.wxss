@@ -214,6 +214,7 @@ page {background-color: #EFEFF4; padding-top: 100rpx; }
   width: 243rpx;
   display:inline-block;
   margin-left: 20rpx;
+  position: relative;
 }
 .yhq_li image{
   width: 243rpx;
@@ -238,6 +239,16 @@ page {background-color: #EFEFF4; padding-top: 100rpx; }
   color: #ffffff;
   font-size: 16rpx;
 
+}
+
+/* 中秋版 */
+.yhq_view{
+  margin-left:100rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+.zhongqiu-q{
+  font-size: 20rpx;
 }
 
 
@@ -386,7 +397,7 @@ page {background-color: #EFEFF4; padding-top: 100rpx; }
   width:320rpx;
   height:63rpx;
   line-height: 63rpx;
-  background:#628DA3; 
+  background:#112061; 
   color: #fff;
   margin-top: 20rpx;
   font-size: 32rpx;
@@ -399,7 +410,7 @@ page {background-color: #EFEFF4; padding-top: 100rpx; }
   margin-top: 7rpx;
   margin-right: 20rpx;
   font-size: 28rpx;
-  color:#628DA3; 
+  color:#112061; 
   line-height: 48rpx;
   text-align: center
 }

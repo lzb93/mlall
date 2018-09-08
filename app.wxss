@@ -77,7 +77,7 @@ view, navigator, image, input, scroll-view, text {
   color: #806330 !important;
 }
 .main_bg {
-   background: #628DA3 !important; 
+   background: #112061 !important; 
   /* background: linear-gradient(#E9BD6F, #806330);  */
 }
 .color_gray {

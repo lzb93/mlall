@@ -64,7 +64,9 @@
         <navigator class='yhq_li' wx:for="{{coupons}}" wx:key url="/pages/USER/notused/notused">
             <image src='../../../images/yhq.png' mode='widthFix'></image>
             <view class='yhq_view'>
-               {{item.money}}<text>元</text><view class='yhq_text'>全店满{{item.condition}}使用</view>
+               <text class='zhongqiu-q'>￥</text>{{item.money}}
+               <!-- <text>元</text> -->
+               <!-- <view class='yhq_text'>全店满{{item.condition}}使用</view> -->
             </view>
         
         </navigator>

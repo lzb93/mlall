@@ -107,7 +107,7 @@
 
 }
 .quan-jd .ccc{
-  background: #628DA3;
+  background: #112061;
   padding:0 15rpx; 
   position: absolute;
   top: 0;

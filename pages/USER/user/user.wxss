@@ -15,7 +15,7 @@ page {
   left: 0;
   width: 100%;
   height: 220rpx;
-  background: #628DA3;
+  background: #112061;
   z-index: -1;
 }
 .user_head {

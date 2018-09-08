@@ -58,14 +58,14 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#628DA3",
+    "navigationBarBackgroundColor": "#112061",
     "navigationBarTitleText": "美拉商城",
     "navigationBarTextStyle":"white",
     "backgroundColor": "#000000"
   },
   "tabBar": {
     "color": "#BFBFBF",
-    "selectedColor": "#628DA3",
+    "selectedColor": "#112061",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [

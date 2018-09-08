@@ -5,7 +5,7 @@
 .fenxiao-head{
   width:750rpx;
   height:300rpx;
-  background:#628DA3;
+  background:#112061;
   padding-top: 100rpx;
 
   display: flex
@@ -45,8 +45,8 @@
 
 }
 .fxnav-li.on{
-  border-bottom: 2px solid #628DA3;
-  color: #628DA3;
+  border-bottom: 2px solid #112061;
+  color: #112061;
 }
 .fenxiao-main{
 
@@ -68,7 +68,7 @@
 .fxli-left image{
   width: 200rpx;
   height: 200rpx;
-  background: #628DA3;
+  background: #112061;
   border-radius:10px;
 
 }
@@ -86,10 +86,10 @@
   line-height: 70rpx;
 }
 .fxli-p{
-  color: #628DA3;
+  color: #112061;
 }
 .fxli-sm{
-  color: #628DA3;
+  color: #112061;
   font-size: 24rpx;
 }
 .fxli-span{
@@ -100,8 +100,8 @@
    position: absolute;
    right: 0;
    top: 110rpx; 
-   color: #628DA3;
-   border: 1px solid #628DA3;
+   color: #112061;
+   border: 1px solid #112061;
    border-radius:15px; 
    padding: 10rpx;
 }
