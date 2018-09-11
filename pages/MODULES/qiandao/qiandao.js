@@ -1,4 +1,4 @@
-import { integralMall, integralBanner } from '../../../services/API';
+import { integralMall, integralBanner, signin, signincount, signInLottery, lotteryadd } from '../../../services/API';
 
 const app = getApp();
 Page({
@@ -10,9 +10,90 @@ Page({
     isAgain: true,
     isNomore: false,
     items: [],
-    banners: []
+    banners: [],
+    widthx:"",   //103倍数
+    sign:[
+      {
+        name:"+1"
+      },
+      {
+        name: "+1"
+      },
+      {
+        name: "+1"
+      },
+      {
+        name: "+1"
+      },
+      {
+        name: "+1"
+      },
+      {
+        name: "+1"
+      },
+      {
+        name: "+1"
+      },
+    ],
+    sign_count:""
   },
+
+
+  // 领奖
+  lotteryadd(params) {
+    lotteryadd(params)
+      .then(({ status, result, msg }) => {
+        if (status == 1) {
+          app.wxAPI.toast(msg, status)
+
+        } else {
+          app.wxAPI.alert(msg)
+        }
+      })
+  },
+  // 签到jiangpin
+  signInLottery(params) {
+    signInLottery(params)
+      .then(({ status, result, msg }) => {
+        if (status == 1) {
+          this.setData({
+            sign: result.lottery
+          });
+
+        } else {
+          app.wxAPI.alert(msg)
+        }
+      })
+  },
+  // 签到
+  signin(params) {
+    signin(params)
+      .then(({ status, result, msg }) => {
+        if (status == 1) {
+          app.wxAPI.toast(msg, status);
+          this.lotteryadd({ lottery_id: result.lottery_id});
+          this.signincount();
+        } else {
+          app.wxAPI.alert(msg)
+        }
+      })
+  },
+  // 签到次数
+  signincount(params) {
+    signincount(params)
+      .then(({ status, result, msg }) => {
+        if (status == 1) {
+          this.setData({
+            sign_count: result.sign_count,
+            widthx: parseInt(103) * parseInt(result.sign_count-1)
+          });
+        }
+      })
+  },
+
   onLoad() {
+    this.signincount();
+    this.signInLottery();
     this.setData({
       userInfo: app.userInfo
     })

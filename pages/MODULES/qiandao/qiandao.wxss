@@ -117,15 +117,36 @@ page {
 /* 签到 */
 .qiandao{
   height: 336rpx;
-  width: 100%
+  width: 100%;
+  background: #fff;
+  margin-bottom: 20rpx;
 
 }
+
 .qiandao-warp{
-  display: flex
+  display: flex;
+  position: relative;
+}
+.bgl{
+  width: 620rpx;
+  border: 1px solid #dedede;
+  border-radius: 10rpx;
+  height: 10rpx;
+  position: absolute;
+  left:65rpx;
+  top:65rpx;
+  overflow: hidden;
+
+}
+.bgl view{
+  background: #112061;
+  height: 10rpx;
 }
 .qiandao-zi{
   flex: 1;
   text-align: center;
+  position: relative;
+  z-index: 9;
 
 }
 .jiayi{
@@ -136,18 +157,22 @@ page {
   height: 25rpx;
   border-radius: 100%;
   margin:20rpx auto;
-  border: 1px solid red;
+  border: 1px solid #dedede;
   padding: 5rpx;
+  background: #fff;
 }
-.quan{
-  background: red;
-}
+
 .yuan view{
   width: 12rpx;
   height: 12rpx;
   border-radius: 100%;
-  background: red;
+  background: #dedede;
 
+}
+
+.quan,.quan view{
+  background: #112061;
+  border: 1px solid #112061;
 }
 .tian{
 
@@ -155,13 +180,16 @@ page {
 .quan{
 
 }
+.qiandao-btn{
+  padding-top: 50rpx;
+}
 .qiandao-btn view{
   width:300rpx;
   height:70rpx;
   line-height: 70rpx;
   color: #fff;
-  
-  background:rgba(98,141,163,1);
+  margin-top: 50rpx;
+  background:#112061;
   border-radius:30rpx;
   text-align: center;
   margin: auto;

@@ -434,3 +434,21 @@ export function reservegetInfo(params) {
 export function reserveAddOrder(params) {
   return get(config.host + 'c=reserve&a=addOrder', params)
 }
+
+// 签到
+
+// http://whole.meilashidai.net/index.php?m=api&c=lottery&a=signin  签到
+export function signin(params) {
+  return get(config.host + 'c=lottery&a=signin', params)
+}
+
+// http://whole.meilashidai.net/index.php?m=api&c=lottery&a=signincount  签到次数
+export function signincount(params) {
+  return get(config.host + 'c=lottery&a=signincount', params)
+}
+
+// http://whole.meilashidai.net/index.php?m=api&c=lottery&a=signincount  签到礼品
+export function signInLottery(params) {
+  return get(config.host + 'c=lottery&a=signInLottery', params)
+}
+

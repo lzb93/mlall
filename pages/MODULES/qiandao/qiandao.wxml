@@ -11,49 +11,24 @@
   </view>
 
   <view class='qiandao'>
+       
+      
        <view class='qiandao-warp'>
-             <view class='qiandao-zi'>
-                 <view class='jiayi'>+1</view>
-                 <view class='yuan quan'>
+             <view class='bgl'>
+                <view style='width:{{widthx}}rpx'></view> 
+             </view>
+             <view class='qiandao-zi' wx:for="{{sign}}" wx:key>
+                 <view class='jiayi'>{{item.name}}</view>
+                 <view class='yuan {{sign_count>index? "quan":""}} '>
                     <view></view>
                  </view>
-                 <view class='tian'>1天</view>
+                 <view class='tian'>{{index+1 }}天</view>
              </view>
-             <view class='qiandao-zi'>
-                 <view class='jiayi'>+1</view>
-                 <view class='yuan'> <view></view></view>
-                 <view class='tian'>1天</view>
-             </view>
-             <view class='qiandao-zi'>
-                 <view class='jiayi'>+1</view>
-                    <view class='yuan'> <view></view></view>
-                 <view class='tian'>1天</view>
-             </view>
-             <view class='qiandao-zi'>
-                 <view class='jiayi'>+1</view>
-                  <view class='yuan'> <view></view></view>
-                 <view class='tian'>1天</view>
-             </view>
-             <view class='qiandao-zi'>
-                 <view class='jiayi'>+1</view>
-              <view class='yuan'> <view></view></view>
-                 <view class='tian'>1天</view>
-             </view>
-             <view class='qiandao-zi'>
-                 <view class='jiayi'>+1</view>
-                      <view class='yuan'> <view></view></view>
-                 <view class='tian'>1天</view>
-             </view>
-             <view class='qiandao-zi'>
-                 <view class='jiayi'>+1</view>
-       <view class='yuan'> <view></view></view>
-                 <view class='tian'>1天</view>
-             </view>
+            
 
-           
        </view>
        <view class='qiandao-btn'>
-             <view>签到</view>
+             <view bindtap='signin'>签到</view>
        </view>
   </view>
 
