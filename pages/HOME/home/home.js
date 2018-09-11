@@ -61,9 +61,11 @@ Page({
       },
       {
         src: '../../../images/icon_home_yuding.png',
+        url: '/pages/MODULESNAV/hotel/hotel',
         name: '酒店预定'
       },
       {
+        url: '/pages/MODULES/qiandao/qiandao',
         src: '../../../images/icon_home_kanjia.png',
         name: '砍价专区'
       },

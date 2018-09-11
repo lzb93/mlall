@@ -13,6 +13,14 @@
 
     "pages/TYPE/type/type",
     "pages/ADVANCE/advance/advance",
+    
+    "pages/MODULES/Modules/Modules",
+    "pages/MODULES/enroll/enroll",
+    "pages/MODULES/qiandao/qiandao",
+    "pages/MODULESNAV/hotel/hotel",
+    "pages/MODULESNAV/Modules/Modules",
+    "pages/MODULESNAV/detail/detail",
+    "pages/MODULESNAV/calendar/calendar",
 
     "pages/INTEGRAL/integral/integral",
     "pages/INTEGRAL/payOrder/payOrder",
