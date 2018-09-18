@@ -38,18 +38,39 @@
   </view>
 
    <view class='notice flex_between' wx:if="{{article.length > 0}}">
-    <view class='no'>时时榜单</view>
-
+     <view class='no'>时时榜单</view>
+ 
     <swiper class='notice_wrap' vertical='{{true}}' circular='{{true}}' autoplay='{{true}}' interval='{{4000}}'>
       <block wx:for="{{article}}" wx:key>
         <swiper-item>
-          <navigator url='/pages/HOME/article/article?id={{item.user_id}}'>
-            <view class='no_title' bindtap=''>{{item.user.nickname}}抽中{{item.lottery.name}}</view>
-          </navigator>
+          <view class='no_title' bindtap=''>{{item.user.nickname}}抽中{{item.lottery.name}}</view>
         </swiper-item>
       </block>
-    </swiper>
+    </swiper> 
   </view>
+
+    <!-- 排行榜 -->
+    <view class='notice flex_between  paihangb' wx:if="{{article_ph.length > 0}}">
+     <view class='nos'>时时榜单</view>
+     <view class='notice_wrap'>
+      <block wx:for="{{article_ph}}" wx:key >
+        <view style='display: flex; text-align: center;'>
+          <view  class='no_num'>{{index+1}}</view>
+          <image src='{{item.head_pic}}'></image>
+          <view class='no_title'>{{item.username}}  抽中  {{item.rulename}}</view>
+        </view>
+      </block>
+      ...
+       <block wx:for="{{siblings}}" wx:key >
+        <view style='display: flex; text-align: center;'>
+          <view  class='no_num'>{{rank}}</view>
+          <image src='{{item.head_pic}}'></image>
+          <view class='no_title'>{{item.username}}  抽中  {{item.rulename}}</view>
+        </view>
+      </block>
+     </view>
+    </view>
+
 
       <view class='cj-alert' wx:if="{{alertcj}}">
        <form  bindsubmit="formSubmit" bindreset="formReset">

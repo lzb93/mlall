@@ -1,0 +1,34 @@
+<!--pages/HOME/tixian/tixian.wxml-->
+  <view class='fenxiao-main'>
+      <view class='fxmain-li' >
+        <view class='dingdan'>提现金额：1578.0元</view>
+
+        <view class='fxli-right'>
+            <view class='fxli-h4'>李志滨 <view class='fxli-span right'>2018.01.02 10:10:10</view></view>
+            <view class='fxli-p'>银行卡号：621700193004933445</view>
+            <view class='fxli-sm'>建设银行</view>
+            <view class='fxli-btn'>待打款</view>
+        </view>
+      
+      </view>
+      
+
+  </view> 
+  <view class='fenxiao-main'>
+      <view class='fxmain-li' wx:for="{{orders}}" wx:key>
+        <view class='dingdan'>订单号:{{item.order_sn}}</view>
+        <view class='fxli-left'>
+            <image src='{{host}}c=Goods&a=goodsThumImages&width=370&height=370&goods_id={{item.goods_id}}'></image>
+        </view>
+
+        <view class='fxli-right'>
+            <view class='fxli-h4'>{{item.good.goods_name}}</view>
+            <view class='fxli-p'>￥{{item.good.shop_price}}</view>
+            <view class='fxli-sm'>佣金{{item.money}}</view>
+            <view class='fxli-span'>{{item.create_time}}</view>
+            <view class='fxli-btn'>{{item.status_desc}}</view>
+        </view>
+      
+      </view>
+
+  </view> 

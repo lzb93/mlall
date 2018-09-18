@@ -46,8 +46,6 @@ Page({
         if (status == 1) {
           app.wxAPI.toast(msg, status)
 
-        } else {
-          app.wxAPI.alert(msg)
         }
       })
   },
@@ -107,6 +105,16 @@ Page({
       })
   },
   onShow() {
+    let token = app.token;
+    if (!token) {
+      app.wxAPI.alert('未登录!')
+        .then(() => {
+          wx.reLaunch({
+            url: '/pages/USER/user/user?from=pages/MODULES/qiandao/qiandao'
+          })
+        })
+      return
+    }
     this.integralMall({ p: this.data.p });
   },
   integralMall(params) {

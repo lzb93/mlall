@@ -1,0 +1,15 @@
+<!--pages/FENXIAO/erweima/erweima.wxml-->
+<view class='erweima'>
+  <view class='user_inte'>
+      <image class='avatar' src='{{userInfo.head_pic}}'></image>
+      <view>{{userInfo.nickname}}</view>
+  </view>
+  <view class='erweima-p'>
+    免费开店真的有钱赚！
+  </view>
+  <view class='erweima-img'>
+       <image class='' src='{{userInfo.head_pic}}'></image>
+
+        <canvas hidden="{{canvasHidden}}" bindtap="previewImg"  canvas-id="mycanvas" class="qcode-image"/>
+  </view>
+</view>

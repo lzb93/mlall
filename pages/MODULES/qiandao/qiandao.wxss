@@ -148,9 +148,13 @@ page {
   position: relative;
   z-index: 9;
 
+
 }
 .jiayi{
-
+    height: 38rpx;  
+}
+.jiayi::after{
+  content: ""
 }
 .yuan{
   width: 25rpx;

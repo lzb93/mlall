@@ -36,15 +36,22 @@ Page({
       // }
     ],
     items: [
+      // {
+      //   name: '淘客中心',
+      //   src: '../../../images/icon_user_yongjin.png',
+      //   url: '/pages/TAOKE/taokehome/taokehome'
+      // },
       {
-        name: '淘客中心',
-        src: '../../../images/icon_user_yongjin.png',
-        url: '/pages/TAOKE/taokehome/taokehome'
-      },
-      {
+        distribut:1,
         name: '分销中心',
         src: '../../../images/icon_user_yongjin.png',
-        url: '/pages/HOME/fenxiao/fenxiao'
+        url: '/pages/FENXIAO/fenxiao/fenxiao'
+      },
+      {
+        distribut: 0,
+        name: '成为分销商',
+        src: '../../../images/icon_user_yongjin.png',
+        url: '/pages/HOME/jiaru/jiaru'
       },
       // {
       //   name: '我的秒杀',
@@ -87,6 +94,11 @@ Page({
         src: '../../../images/icon_user_soucang.png',
         url: '/pages/USER/collect/collect'
       },
+         {
+        name: 'WEBVIEW',
+        src: '../../../images/icon_user_kefu.png',
+           url: '/pages/USER/webview/webview'
+      }
       // {
       //   name: '博饼小游戏',
       //   src: '../../../images/icon_user_kefu.png',
@@ -108,6 +120,7 @@ Page({
       itemId: options.item_id || '',
       teamId: options.team_id || ''
     });
+  
     let token = app.token;
     if (!token) {
       auth(() => {
@@ -116,7 +129,14 @@ Page({
     }
   },
   onShow() {
-    console.log(app.token)
+
+    if (app.userInfo.is_distribut == 1) {
+      let items = this.data.items;
+      items[0].distribut=0;
+      items[1].distribut=1;
+      this.setData({ items: items })
+
+    }
   },
   openUserNav(e) {
     let token = app.token;

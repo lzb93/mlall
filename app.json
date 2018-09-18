@@ -4,12 +4,18 @@
     "pages/HOME/comment/comment",
     "pages/HOME/searchResult/searchResult",
     "pages/HOME/article/article",
-    "pages/HOME/fenxiao/fenxiao",
     "pages/HOME/bobing/bobing",
     "pages/HOME/sjm/sjm",
     "pages/HOME/game/game",
+    "pages/HOME/jiaru/jiaru",
     "pages/HOME/sjmindex/sjmindex",
     "pages/HOME/choujiang/choujiang",
+    "pages/FENXIAO/tixian/tixian",
+    "pages/FENXIAO/tixianjm/tixianjm",
+    "pages/FENXIAO/fxorder/fxorder",
+    "pages/FENXIAO/erweima/erweima",
+    "pages/FENXIAO/tuandui/tuandui",
+    "pages/FENXIAO/fenxiao/fenxiao",
 
     "pages/TYPE/type/type",
     "pages/ADVANCE/advance/advance",
@@ -62,7 +68,9 @@
     "pages/USER/pinglun/pinglun",
     "pages/USER/refundOrder/refundOrder",
     "pages/USER/notused/notused",
-    "pages/USER/refund/refund"
+    "pages/USER/refund/refund",
+    "pages/USER/webview/webview"
+
   ],
   "window":{
     "backgroundTextStyle":"light",

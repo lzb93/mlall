@@ -57,7 +57,7 @@
   
 
   <view class='user_list'>
-    <view class='list_item flex_between' wx:for="{{items}}" wx:key bindtap='tabList' data-index="{{index}}">
+    <view class='list_item flex_between' wx:for="{{items}}" wx:if="{{item.distribut!=1}}" wx:key bindtap='tabList' data-index="{{index}}">
       <view class='tc flex_row'>
           <image class='refund' wx:if="{{item.src}}" src='{{item.src}}'></image>  
         <view class='item_text'>{{item.name}}</view>

@@ -1,0 +1,2 @@
+/* pages/HOME/fxorder/fxorder.wxss */
+@import '../fenxiao/fenxiao.wxss';

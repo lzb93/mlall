@@ -80,6 +80,12 @@ Page({
       //   name: '淘客quan'
       // },
 
+      {
+        url: '/pages/DOUHUO/douhuo/douhuo',
+        src: '../../../images/icon_home_kanjia.png',
+        name: '抖货'
+      },
+
   
     ]
   },

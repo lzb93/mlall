@@ -1,5 +1,5 @@
 // pages/HOME/bobing/bobing.js
-import { lotteryautumn, lotteryaddUser, lotteryList, userList } from '../../../services/API'
+import { lotteryautumn, lotteryaddUser, lotteryList, userList, autumnRankings, Autumnindex, Autumnshare } from '../../../services/API'
 var bbjson = require('../../../utils/bbjson.js');
 
 const app = getApp()
@@ -18,6 +18,9 @@ Page({
     zhongjiang_id:"",
     bbimg:[1,2,3,4,5,6],
     bbjosn:{},
+    article_ph:[],
+    siblings:[],
+    rank:0,
     article:[
       {
         title:123123,
@@ -33,6 +36,33 @@ Page({
       },
     ]
   
+  },
+
+  // zhuli
+  Autumnshare(params) {
+    Autumnshare(params).then(({ status, result, msg }) => {
+
+      if (status == 1) {
+        this.setData({
+
+        })
+      } else {
+        app.wxAPI.alert(msg);
+      }
+    })
+  },
+  // zhuli
+  Autumnindex(params) {
+    Autumnindex(params).then(({ status, result, msg }) => {
+
+      if (status == 1) {
+        this.setData({
+
+        })
+      } else {
+        app.wxAPI.alert(msg);
+      }
+    })
   },
 
 
@@ -107,6 +137,8 @@ Page({
     })
   },
 
+
+
   //  领取奖品  
   lotteryaddUser(params) {
     lotteryaddUser(params).then(({ status, result, msg }) => {
@@ -155,12 +187,37 @@ Page({
     })
   },
 
+  // autumnRankings
+  // 获奖名单paihang
+  autumnRankings(params) {
+    autumnRankings(params).then(({ status, result, msg }) => {
+
+      if (status == 1) {
+        this.setData({
+          article_ph: result.list,
+          siblings: result.siblings,
+          rank: result.rank,
+        })
+        if (result.rank<=5){
+          this.setData({
+            siblings: [],
+          })     
+        }
+      } else {
+        app.wxAPI.alert(msg)
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.lotteryList();
     this.userList();
+    this.autumnRankings();
+
+    this.Autumnindex();
     
   },
 
@@ -255,7 +312,22 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function (res) {
+
+    if (res.from === 'button') {
+
+
+    }
+    return {
+      success: function (res) {
+        this.Autumnshare();
+        app.wxAPI.alert("分享成功！");
+        
+      },
+      fail: function (res) {
+        app.wxAPI.alert(res);
+
+      }
+    }
   }
 })

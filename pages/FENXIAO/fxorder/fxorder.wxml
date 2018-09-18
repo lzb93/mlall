@@ -1,0 +1,25 @@
+   <view class='fenxiao-nav'>
+     <view   wx:for="{{navs}}" wx:key  class='fxnav-li {{activeType == item.type ? "on" : ""}}' data-type="{{item.type}}" bindtap='tabNavBar'>{{item.title}}</view>
+  </view>
+
+  <view class='fenxiao-main'>
+      <view class='fxmain-li' wx:for="{{orders}}" wx:key>
+        <view class='dingdan'>订单号:{{item.order_sn}}</view>
+        <view class='fxli-left'>
+            <image src='{{host}}c=Goods&a=goodsThumImages&width=370&height=370&goods_id={{item.goods_id}}'></image>
+        </view>
+
+        <view class='fxli-right'>
+            <view class='fxli-h4'>{{item.good.goods_name}}</view>
+            <view class='fxli-p'>￥{{item.good.shop_price}}</view>
+            <view class='fxli-sm'>佣金{{item.money}}</view>
+            <view class='fxli-span'>{{item.create_time}}</view>
+            <view class='fxli-btn'>{{item.status_desc}}</view>
+        </view>
+      
+      </view>
+
+  </view> 
+
+
+

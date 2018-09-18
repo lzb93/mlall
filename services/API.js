@@ -245,6 +245,7 @@ export function search(params) {
   return get(config.host + 'c=Goods&a=search', params)
 }
 
+// 分销
 // /api/distribut / hash  分享时候请求hash 接口  ，参数goods_id 商品ID，用户打开连接的时候保存这个hash值，在添加购物车的时候传入这个hash
 export function distributHash(params) {
   return get(config.host + 'c=distribut&a=hash', params)
@@ -382,6 +383,11 @@ export function userList(params) {
   return get(config.host + 'c=lottery&a=userList', params)
 }
 
+// autumnRankings    榜单
+export function autumnRankings(params) {
+  return get(config.host + 'c=lottery&a=autumnRankings', params)
+}
+
 
 // 围住红包模块接口 
 // 获取游戏配置信息  index.php?m=api&c=enclose&a=index
@@ -421,6 +427,21 @@ export function lotteryadd(params) {
   return get(config.host + 'c=lottery&a=addUser', params)
 }
 
+// 游戏助力
+// c=Autumn&a=index
+
+export function Autumnindex(params) {
+  return get(config.host + 'c=Autumn&a=index', params)
+}
+
+// c = Autumn & a=share
+export function Autumnshare(params) {
+  return get(config.host + 'c=Autumn&a=share', params)
+}
+
+
+
+
 // 酒店预定- m=api&c=reserve&a=getlist
 export function reservegetlist(params) {
   return get(config.host + 'c=reserve&a=getlist', params)
@@ -452,3 +473,53 @@ export function signInLottery(params) {
   return get(config.host + 'c=lottery&a=signInLottery', params)
 }
 
+
+// 三级分销
+// Uri:/api/distribut/apply   申请分销商   参数：username, mobile
+export function distributapply(params) {
+  return post(config.host + 'c=distribut&a=apply', params)
+}
+
+// 我的下级
+// 如果我是一级分销，就返回所属二级以及三级的信息
+// 如果我是二级分销，返回所属三级信息
+// 如果我是三级分销，返回null
+// Uri: /api/distribut / superior
+
+export function distributsuperior(params) {
+  return get(config.host + 'c=distribut&a=superior', params)
+}
+
+// Uri: /api/distribut / orderlist   订单
+
+export function distributorderlist(params) {
+  return get(config.host + 'c=distribut&a=orderlist', params)
+}
+
+// 分成记录接口
+// 查询会员的所属的分成情况
+// 返回数据 订单ID，订单号，商品名称，佣金数，订单状态
+
+// Uri: /api/distribut / rebateList
+
+export function distributrebateList(params) {
+  return get(config.host + 'c=distribut&a=rebateList', params)
+}
+
+
+
+// Uri: /api/distribut / applywithdrawal
+
+// 参数：  account_bank string  银行卡号   account_name string  开户名   bank_name string  银行名称   money decimal  提现金额
+
+export function distributapplywithdrawal(params) {
+  return post(config.host + 'c=distribut&a=applywithdrawal', params)
+}
+
+// 提现记录
+
+// Uri: /api/distribut / withdrawallist
+
+export function distributwithdrawallist(params) {
+  return get(config.host + 'c=distribut&a=withdrawallist', params)
+}

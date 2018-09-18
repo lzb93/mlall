@@ -1,0 +1,52 @@
+<!--pages/FENXIAO/tixianjm/tixianjm.wxml-->
+<form  bindsubmit="doWithdraw" bindreset="formReset">
+<!-- <navigator url="../withdrawals/awals" class="item">
+  <text class="item-text">{{bank.bank}}</text>
+  <text class="item-right"  name="no1" value="{{bank.id}}">**** **** **** {{bank.no}}</text>
+  <input class="item-right"  name="no" value="{{bank.id}}" style='display:none'></input>
+  <image class="item-left" src="/style/images/left.png"></image>
+</navigator> -->
+<view class="withdraw-contant">
+  <view class="">账户剩余金额：<text>1567.00元</text></view>
+  <view class="item-flex">
+    <view class="money-iocn">￥</view>
+    <view class="monen">
+      <input class="withdraw-num"  name="total" placeholder="0.00" placeholder-class="pl-class" auto-height/>
+    </view>
+  </view>
+  <view class="withdraw-tips">扣除手续费：xx%，可提现金额xx元</view>
+</view>
+
+
+  <view  class='bgs-btn'>
+      <label>姓名：<input class='input-index' placeholder='请输入姓名' bindinput="teamName"></input></label>
+      <label>电话：<input class='input-index' placeholder='请输入手机号码' bindinput="teamTel"></input></label>
+  </view>
+
+
+
+
+
+
+<view class="add-card-btn">
+  <button class="add-button"  formType="submit">确认提现</button>
+</view>
+<!--弹框  -->
+<!-- <view class="bg-cover" hidden="{{isHiddenModel}}">
+    <view class="model-content">
+        <view class="model-title">
+            <view class="model-input">
+               <input placeholder="请输入验证码" name="code" value=''/>
+            </view>
+            <view class="model-btn">
+                <button bindtap="reSendPhoneNum">发送验证码</button>
+            </view>
+        </view>
+        <view class="model-menu">
+             <button class="cancel-btn" bindtap="bindCancel">取消</button>
+            <button class="confirm-btn" formType="submit">确认</button>
+        </view>
+    </view>
+</view> -->
+
+</form>

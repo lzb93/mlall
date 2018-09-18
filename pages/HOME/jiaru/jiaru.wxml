@@ -1,0 +1,62 @@
+<!--pages/HOME/jiaru/jiaru.wxml-->
+<!--pages/me/my-address/address-add/address-add.wxml-->
+<view class="add-card">欢迎加入<text class='lan'>美拉时代</text></view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="add-item add-bottom">
+      <view class="add-left">
+        <text>持卡人:</text>
+      </view>
+      <input placeholder="请输入真实姓名" name="holder" value='' />
+    </view>
+
+
+
+    <view class="add-item">
+      <view class="add-left">
+        <text>手机号码:</text>
+      </view>
+      <input placeholder="输入手机号码" type="number"   maxlength="11"  name="mobile" value="" />
+    </view>
+
+    <view class="add-card-tip">
+       <label for="weuiAgree" class="weui-agree" bindtap="writeChecked">
+                <checkbox id="weuiAgree" class='checkboxs' checked="{{writeChecked}}"  name="xieyi" ></checkbox>
+                <text class="weui-agree__text">
+                    阅读并同意
+                </text>
+        </label>
+        <text catchtap='openWindows' class='tklan '>《相关条款》</text>  
+    </view>
+    <view class="add-card-btn">
+        <button class="add-button"  formType="submit">申请成为分销商</button>
+    </view>
+ </form>
+ <view class='jiange' style="height:50rpx;background-color:#f5f5f5;"></view>
+
+ 
+<!-- 电子协议 wx:if="{{writeDiary}}"-->
+<view class="js_dialog" id="androidDialog1"  wx:if="{{writeDiary}}">
+  <view class="weui-mask"></view>
+  <view class="weui-dialog weui-skin_android">
+    <view class="weui-dialog__hd"><strong class="weui-dialog__title">SEARCH电子协议</strong>  </view>
+
+    <view class="weui-dialog__bd tl">
+      <text>SEARCH电子协议条款
+      </text>
+    </view>
+    <view class="weui-dialog__ft">
+        <view class="weui-dialog__btn weui-dialog__btn_default" catchtap="noneWindows">确定</view>
+    </view>
+  </view>
+</view>  
+
+<view class='tequan'>
+   <view class='tq-h3'>分销商特权</view>
+   <view class='tq-p'>
+       <text>销售拿佣金：成为分销商后卖出商品，您可以获得佣金。
+             分销的商品统一由厂家直接收款、直接发货，并提供产品的
+             售后服务，分销佣金由厂家统一制定。
+       
+       </text>
+   </view>
+</view>
