@@ -1,0 +1,46 @@
+<!--pages/DOUHUO/douhuouser/douhuouser.wxml-->
+<!--pages/HOME/fenxiao/fenxiao.wxml-->
+<view class='fenxiao'>
+  <view class='user_inte'>
+      <image class='avatar' src='{{userInfo.head_pic}}'></image>
+      <view class='user_p'>{{userInfo.pay_points}}</view>
+  </view>
+  <view class='fenxiao-head'>
+   
+    <view class='head-text'>
+       <view class=''>获赞</view>
+       <view class=''>12312</view>
+    </view>
+    <view class='head-text'>
+       <view class=''>关注</view>
+       <view class=''>123123</view>
+    </view>
+    <view class='head-text'>
+       <view class=''>粉丝</view>
+       <view class=''>123</view>
+    </view>
+
+  </view>
+
+  <view class='user_v'>
+     <view class='user_li'>
+        <video src='https://www.zhongxingyoya.com/public/upload/goods/2018/07-23/4242213f44baa774588c76aa007fd57f.mp4'></video>
+        <view class='user_bp'>1231</view>
+        
+     </view>
+      <view class='user_li'>
+        <video src='https://www.zhongxingyoya.com/public/upload/goods/2018/07-23/4242213f44baa774588c76aa007fd57f.mp4'></video>
+        <view class='user_bp'>1231</view>
+        
+     </view>
+      <view class='user_li'>
+        <video src='https://www.zhongxingyoya.com/public/upload/goods/2018/07-23/4242213f44baa774588c76aa007fd57f.mp4'></video>
+        <view class='user_bp'>1231</view>
+        
+     </view>
+  </view>
+
+
+</view>
+
+

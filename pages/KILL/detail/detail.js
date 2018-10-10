@@ -11,6 +11,7 @@ Page({
   data: {
     http: app.http,
     host: app.host,
+    banbenhao: "",
     showPop: false,
     itemId: '',
     goodsId: '',
@@ -22,14 +23,10 @@ Page({
     loading: false
   },
   onLoad(options) {
-
-
-
-
-
+    var ind = wx.getStorageSync("ind");    //取
     // var hash = wx.getStorageSync("hash");    //取
 
-    // wx.setStorageSync('hash', e);    //存
+    wx.setStorageSync('hash', options.hash);    //存
 
     // wx.clearStorage({          // 删
     //   key: 'hash',
@@ -42,7 +39,8 @@ Page({
     this.setData({
       itemId: options.itemId || '',
       goodsId: options.id,
-      hash: options.hash || ''
+      hash: options.hash || '',
+      banbenhao: ind
     })
 
 

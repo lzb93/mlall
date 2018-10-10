@@ -523,3 +523,60 @@ export function distributapplywithdrawal(params) {
 export function distributwithdrawallist(params) {
   return get(config.host + 'c=distribut&a=withdrawallist', params)
 }
+
+
+
+
+// 斗货
+
+// 获取分类(导航栏)
+// index.php ? m = api & c=tao & a=getCat
+export function dhuogetCat(params) {
+  return get(config.host + 'c=dhuo&a=getCat', params)
+}
+
+
+// 获取列表  这个是视频列表的
+// index.php ? m = api & c=tao & a=getList
+export function dhuogetList(params) {
+  return get(config.host + 'c=dhuo&a=getList', params)
+}
+
+
+// 获取单篇文章
+// index.php ? m = api & c=tao & a=getOne & article_id=get / post
+export function dhuogetOne(params) {
+  return get(config.host + 'c=dhuo&a=getOne', params)
+}
+
+// 获取评论
+// index.php ? m = api & c=tao & a=getComment & article_id=
+// get / post
+export function dhuogetComment(params) {
+  return get(config.host + 'c=dhuo&a=getComment', params)
+}
+
+// 发表评论post
+// index.php ? m = api & c=tao & a=addComment & article_id=
+// 必填参数content
+export function dhuoaddComment(params) {
+  return get(config.host + 'c=dhuo&a=addComment', params)
+}
+
+
+// 回复评论post
+// index.php ? m = api & c=tao & a=addAnswer & comment_id=
+// 必填参数content
+export function dhuoaddAnswer(params) {
+  return get(config.host + 'c=dhuo&a=addAnswer', params)
+}
+
+// 回复赞
+// article_id=
+
+export function dhuoaddZan(params) {
+  return get(config.host + 'c=dhuo&a=zan', params)
+}
+
+
+

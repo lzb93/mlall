@@ -1,0 +1,66 @@
+.icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.tabBar {
+  z-index: 99999;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10rpx;
+  background: #FFFFFF;
+  font-size: 20rpx;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+}
+
+.tabBar-item {
+  width: 15%;
+  text-align: center;
+  overflow: hidden;
+}
+.item-text {
+  color: #969696;
+}
+/*当前字体颜色*/
+.tabBartext {
+  color: #485DC5;
+}
+
+
+.popup {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+.pop_container {
+  z-index: 10000;
+  position: absolute;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.pop_content {
+  min-width: 260rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.pop_item {
+  padding: 10rpx 20rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  font-size: 28rpx;
+  text-align: center;
+}
+.pop_item:last-child {
+  border-bottom: 0;
+}
+.pop_icon_down {
+  display: block;
+  width: 32rpx; 
+  height: 20rpx;
+  margin: 0 auto;
+}

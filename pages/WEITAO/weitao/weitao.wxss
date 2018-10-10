@@ -140,4 +140,4 @@
 
 .nav_item {display: inline-block; font-size: 28rpx; float: left}
 .nav_item .nav_item_s {height: 80rpx; margin: 0 25rpx; line-height: 80rpx; color: #B7B7B7;}
-.nav_item .nav_item_s.selected {border-bottom: 4rpx solid #666; color: #666;}
+.nav_item .nav_item_s.selected {border-bottom: 4rpx solid #628DA3; color: #628DA3;}

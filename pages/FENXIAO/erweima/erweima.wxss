@@ -16,13 +16,13 @@ page{
   color:#999;
   font-size: 24rpx;
 }
-.erweima-img image{
-  width:280rpx;
-  height:280rpx;
-  background: red;
+.erweima-img canvas{
+  width:360rpx;
+  height:360rpx;
+  background: #efefef;
   margin: auto;
     border-radius:5px;
-    margin-top:60rpx;
+    /* margin-top:60rpx; */
 
 }
 

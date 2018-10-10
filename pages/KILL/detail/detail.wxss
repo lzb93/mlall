@@ -123,7 +123,7 @@ page {
 .footer .footer_btn {
   -webkit-box-flex:1;
   line-height: 90rpx;
-  background: #9bc8e4;
+  background:rgb(146, 181, 199);
   font-size: 30rpx;
   color: #fff;
   text-align: center;
@@ -293,7 +293,7 @@ page {
   padding: 15rpx;
 }
 .lv{
-  background: #112061;
+  background: #628DA3;
   color: #ffffff;
 }
 
@@ -304,7 +304,11 @@ text-align: center;
 line-height: 70rpx;
 font-size: 26rpx;
 background: #fff;
-color: #112061
+color: #628DA3
 
   
+}
+.wxParse-p{
+  font-size:0;
+
 }

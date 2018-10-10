@@ -58,8 +58,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-    this.setData({ order: app.cancelOrder.order_goods[0] })
+  onLoad: function (e) {
+
+    this.setData({ order: app.cancelOrder.order_goods[e.ind] })
+    console.log(e.ind)
+    console.log( app.cancelOrder.order_goods[e.ind])
   },
   chooseImage() {
     app.wxAPI.chooseImage({ num: 9 })
@@ -100,10 +103,14 @@ Page({
     })
       .then(({ status, result, msg }) => {
         if (status === 1) {
-          app.wxAPI.toast(msg);
-          wx.switchTab({
-            url: '/pages/HOME/home/home'
-          })
+          app.wxAPI.alert(msg)
+            .then(() => {
+              wx.reLaunch({
+                url: '/pages/HOME/home/home'
+              })
+
+            })
+         
         } else {
           app.wxAPI.alert(msg)
         }

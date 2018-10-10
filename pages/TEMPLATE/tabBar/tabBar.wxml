@@ -1,0 +1,31 @@
+<template name="tabBar">
+  <view class="tabBar flex_between">
+    <block wx:for="{{tabBar}}" wx:for-item="item" wx:key>
+      <view class="tabBar-item" wx:if="{{item.pagePath}}">
+        <navigator url="{{item.pagePath}}">
+          <view><image class="icon" src='{{item.iconPath}}'></image></view>
+          <view class="item-text {{item.current== 1 ? 'tabBartext' :''}}">{{item.text}}</view>
+        </navigator>  
+      </view>
+      <view class="tabBar-item" wx:if="{{!item.pagePath}}" catchtap='clickSpecial'>
+        <view><image class="icon" src='{{item.iconPath}}'></image></view>
+        <view class="item-text {{item.current== 1 ? 'tabBartext' :''}}">{{item.text}}</view> 
+      </view>
+    </block>
+  </view>
+</template>
+
+<template name='special'>
+  <view class='popup' wx:if="{{special.showSpecial}}">
+    <view class='mask' catchtap='closePopup'></view>
+    <view class='pop_container'>
+      <view class='pop_content'>
+        <view class='pop_item' wx:for="{{special.list}}" wx:key catchtap='navigatorTo' data-url='{{item.url_link}}' 
+        data-id="{{item.id}}">{{item.name}}</view>
+      </view>
+      <view>
+        <image class='pop_icon_down' src='../../../images/icon_down.png'></image>
+      </view>
+    </view>
+  </view>
+</template>

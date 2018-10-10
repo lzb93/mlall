@@ -1,2 +1,5 @@
 /* pages/FENXIAO/tuandui/tuandui.wxss */
 @import '../fenxiao/fenxiao.wxss';
+.fxmain-li{
+  height: 230rpx;
+}

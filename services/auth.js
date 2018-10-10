@@ -17,14 +17,22 @@ export function auth(cb, page, id, itemId, teamId) {
       })
       .then((res) => {
         // console.log(res);
+        var hash = wx.getStorageSync("hash");
         return thirdLogin({
           code: res.code,
           from: 'miniapp', 
           nickname: userInfo.nickName, 
-          head_pic: userInfo.avatarUrl
+          head_pic: userInfo.avatarUrl,
+          hash:hash
         })
       })
       .then(({ status, result, msg }) => {
+        wx.clearStorage({
+          key: 'hash',
+          success: function (res) {
+            console.log("清hash");
+          }
+        })
         wxAPI.hideLoading();
         console.log(status)
         console.log(result)

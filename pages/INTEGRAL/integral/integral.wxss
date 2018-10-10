@@ -7,7 +7,7 @@ page {
 .user_inte {
   margin-bottom: 20rpx;
   padding: 50rpx;
-  background: linear-gradient( #FED000, #FF9C01, #FED000);
+  background: linear-gradient( #628DA3,rgb(167, 203, 221), #628DA9 );
   font-size: 34rpx;
   text-align: center;
 }

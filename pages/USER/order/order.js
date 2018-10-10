@@ -56,6 +56,10 @@ Page({
   },
   getOrderList (params) {
     getOrderList(params).then(({ status, result, msg }) => {
+
+      // result.map(item => {
+      //   results.push(item)
+      // })
       if(status == 1) {
         let items = this.data.items
         this.setData({
@@ -146,17 +150,20 @@ Page({
   saleAfter(e) {
     const index = e.currentTarget.dataset.index;
     const arr = this.data.items;
+    console.log(index)
     app.cancelOrder = arr[index];
+    console.log(arr[index], app.cancelOrder)
     wx.navigateTo({
       url: `/pages/USER/returnGoods/returnGoods`
     })
   },
   comment(e) {
     const index = e.currentTarget.dataset.index;
+    const itm = e.currentTarget.dataset.itm;
     const arr = this.data.items;
-    app.cancelOrder = arr[index];
+    app.cancelOrder = arr[itm];
     wx.navigateTo({
-      url: `/pages/USER/pinglun/pinglun`
+      url: `/pages/USER/pinglun/pinglun?ind=${index}` 
     })
   },
   lookExpress(e) {

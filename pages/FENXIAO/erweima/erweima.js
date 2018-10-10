@@ -6,6 +6,8 @@ var QR = require("../../../utils/qrcode.js");
 const app = getApp()
 Page({
   data: {
+    http: app.http,
+    host: app.host,
     userInfo: app.userInfo,
     canvasHidden: false,
     maskHidden: true,
@@ -17,8 +19,8 @@ Page({
     this.setData({ userInfo: app.userInfo, });
     // 页面初始化 options为页面跳转所带来的参数
     var size = this.setCanvasSize();   //动态设置画布大小
-    var initUrl = "url";
-    // inputContent: app.data.res + "/refer?id=" + options.id,
+    var initUrl = app.http + "/refer?id=" + app.userInfo.user_id;
+    // inputContent: app.http + "/refer?id=" + app.userInfo.user_id,
     this.createQrCode(initUrl, "mycanvas", size.w, size.h);
 
   },

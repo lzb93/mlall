@@ -17,7 +17,7 @@
     </view>
   </view>
 
-  <swiper wx:if="{{banners.length > 0}}" class='swiper' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" 
+  <swiper wx:if="{{banners.length > 0}}" class='swiper' indicator-dots="{{false}}" autoplay="{{true}}" interval="{{4000}}" 
   circular="{{true}}">
     <block>
       <swiper-item wx:for="{{banners}}" wx:key wx:if="{{item.goods_id}}">
@@ -33,11 +33,17 @@
     </block>
   </swiper>
 
-  <view class='layout' style='padding:0;'>
-    <view class='layout_inner clearfix' style='margin: 20rpx 25rpx; background: #fff;'>
-      <view class='nav_item' wx:for="{{navTabs}}" wx:key bindtap='tabList' data-index="{{index}}">
+  <view class='layout' style='padding:0;' wx:if="{{banbenhao!=1}}">
+    <!-- <image class='guoqingbg' src='../../../images/inbg.png' mode='widthFix'></image> -->
+    <view class='layout_inner bgfff clearfix' style='margin: 20rpx 25rpx;width:700rpx;padding-top:25rpx;min-height:322rpx;'>
+      <view class='nav_item' wx:for="{{navTabs}}" wx:if="{{banbenhao>=item.indes}}"  wx:key bindtap='tabList' data-index="{{index}}">
         <image src='{{item.src}}' mode='aspectFit'></image>
         <view class='item_text'>{{item.name}}</view>
+      </view>
+
+      <view class='nav_item' wx:if="{{banbenhao==3}}"  wx:key bindtap='tabList' data-index="{{index}}">
+        <image src='../../../images/icon_home_jifen.png' mode='aspectFit'></image>
+        <view class='item_text'>砍价专区</view>
       </view>
     </view>
   </view>
@@ -64,9 +70,7 @@
         <navigator class='yhq_li' wx:for="{{coupons}}" wx:key url="/pages/USER/notused/notused">
             <image src='../../../images/yhq.png' mode='widthFix'></image>
             <view class='yhq_view'>
-               <text class='zhongqiu-q'>￥</text>{{item.money}}
-               <!-- <text>元</text> -->
-               <!-- <view class='yhq_text'>全店满{{item.condition}}使用</view> -->
+               {{item.money}}<text>元</text><view class='yhq_text'>全店满{{item.condition}}使用</view>
             </view>
         
         </navigator>
@@ -143,7 +147,7 @@
 
     <!-- 化妆品左右分块 -->
   <view class='layout' wx:if="{{third.length > 0}}">
-    <view class='title tc'><image src='../../../images/titrm.png' mode='widthFix'></image></view>
+    <view class='title tc'><image src='../../../images/titxh.png' mode='widthFix'></image></view>
     <view class='layout_inner hzp-list'>
       <navigator class='' wx:for="{{third}}" wx:key url='/pages/KILL/detail/detail?id={{item.goods_id}}'>
 
@@ -178,7 +182,7 @@
           
           <view class='flex_between align_items' style='margin-top: 6rpx;'>
             <view class='item_money color_red' style='margin-top: 6rpx;'>￥{{item.shop_price}}</view>
-            <view style='font-size: 22rpx;' class='color_gray'>销量 {{item.sales_sum}} 笔</view>
+            <view style='font-size: 22rpx;' class=''>销量 {{item.sales_sum}} 笔</view>
           </view>
           
         </view>

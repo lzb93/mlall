@@ -2,20 +2,20 @@
 <view class='fenxiao'>
   <view class='user_inte'>
       <image class='avatar' src='{{userInfo.head_pic}}'></image>
-      <view style='color: #fff;'>{{userInfo.pay_points}}</view>
-            <view >分销等级：{distribut.leveldesc}</view>
-                  <view >我的名称：{distribut.nickname}</view>
-      <view >推荐人：{distribut.parent}</view>
+      <!-- <view style='color: #fff;text-align:center;'>{{userInfo.pay_points}}</view> -->
+            <!-- <view >分销等级：{distribut.leveldesc}</view>
+                  <view >我的名称：{distribut.nickname}</view> -->
+      <!-- <view style='color: #fff;text-align:center;'>推荐人：{distribut.parent}</view> -->
   </view>
   <view class='fenxiao-head'>
    
     <view class='head-text'>
        <view class=''>收入明细</view>
-       <view class=''>{{distribut.amount}}元</view>
+       <view class=''>{{distribut.income}}元</view>
     </view>
     <view class='head-text'>
        <view class=''>可提现金额</view>
-       <view class=''>{{distribut.withdraw}}元</view>
+       <view class=''>{{distribut.withdrewal}}元</view>
     </view>
     <view class='tixian'  bindtap='tixianalert'>提现</view>
 

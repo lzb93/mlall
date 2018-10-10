@@ -117,6 +117,7 @@ Page({
 
   onLoad: function (options) {
     
+    
     taogetCat().then(({ status, result, msg }) => {
       console.log(result[0].cat_id)
       if (status == 1) {
@@ -147,7 +148,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var ind = wx.getStorageSync("ind");    //取
+    if (ind != 3 && ind != 4) {
+      app.wxAPI.alert('暂无功能权限!')
+        .then(() => {
+          wx.reLaunch({
+            url: '/pages/USER/user/user'
+          })
+        })
+
+    }
   },
 
   /**

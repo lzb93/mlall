@@ -20,8 +20,8 @@ page {
   border-bottom: 4rpx solid transparent;
 }
 .text.active {
-  border-bottom: 4rpx solid #666;
-  color: #666;
+  border-bottom: 4rpx solid #628DA3;
+  color: #628DA3;
 }
 .wrap {
   margin: 20rpx 25rpx;
@@ -73,12 +73,12 @@ page {
 .ticket_text2 {
   display: inline-block;
   font-size:30rpx;
-  color:#FF9E14;
+  color:#628DA3;
   padding-top:30rpx;
   margin-right: 5rpx; 
 }
 .ticket_text3 {
-  color:#FF9E14;
+  color:#628DA3;
   font-size: 58rpx;
   text-align: center;
 }
@@ -92,8 +92,8 @@ page {
   font-size: 24rpx;
 }
 .nu_btn.no_receive {
-  border: 1rpx solid #FF9E14;
-  color: #FF9E14;
+  border: 1rpx solid #628DA3;
+  color: #628DA3;
 }
 .nu_btn.receive {
   border: 1rpx solid #B3B1B2;

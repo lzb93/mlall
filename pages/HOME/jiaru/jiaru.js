@@ -44,6 +44,14 @@ Page({
         app.wxAPI.alert(msg);
       }
     })
+      .catch(() => {
+        app.wxAPI.alert("加载失败！请联系管理员")
+          .then(() => {
+            wx.switchTab({
+              url: `/pages/HOME/home/home`
+            })
+          })
+      })
   },
 
   formSubmit: function (e) {
@@ -78,7 +86,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let token = app.token;
+    if (!token) {
+      app.wxAPI.alert('未登录!')
+        .then(() => {
+          wx.reLaunch({
+            url: '/pages/USER/user/user?from=pages/HOME/jiaru/jiaru'
+          })
+        })
+      return
+    }
   },
 
   /**

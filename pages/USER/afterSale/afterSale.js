@@ -27,6 +27,7 @@ Page({
     reason: {name: '请选择'}
   },
   onLoad(option) {
+    console.log(app)
     const type = option.type;
     this.setData({
       type,
@@ -48,7 +49,9 @@ Page({
     })
   },
   bindTextAreaBlur(e) {
+    console.log(app.cancelOrder, e.detail.value)
     let order = this.data.order;
+   
     order.describe = e.detail.value;
   },
   // chooseImage() {

@@ -139,8 +139,10 @@ page {
 
 }
 .bgl view{
-  background: #112061;
+  background: #628DA3;
   height: 10rpx;
+  width: 1px;
+  box-sizing: border-box;
 }
 .qiandao-zi{
   flex: 1;
@@ -175,8 +177,8 @@ page {
 }
 
 .quan,.quan view{
-  background: #112061;
-  border: 1px solid #112061;
+  background: #628DA3;
+  border: 1px solid #628DA3;
 }
 .tian{
 
@@ -193,7 +195,7 @@ page {
   line-height: 70rpx;
   color: #fff;
   margin-top: 50rpx;
-  background:#112061;
+  background:#628DA3;
   border-radius:30rpx;
   text-align: center;
   margin: auto;

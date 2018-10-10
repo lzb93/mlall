@@ -12,6 +12,7 @@ Page({
     order: ''
   },
   onLoad() {
+    console.log(app.cancelOrder )
     this.setData({ order: app.cancelOrder })
   },
   fun(e) {

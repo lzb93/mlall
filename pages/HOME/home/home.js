@@ -7,6 +7,7 @@ Page({
     http: app.http,
     host: app.host,
     isAgain: false,
+    banbenhao: 4,
     isNomore: true,
     first: '',
     third: '',
@@ -26,28 +27,41 @@ Page({
       {
         src: '../../../images/icon_home_kill.png',
         name: '秒杀专区',
-        url: '/pages/KILL/kill/kill'
+        url: '/pages/KILL/kill/kill',
+        indes: "2",
       },
       {
         src: '../../../images/icon_home_tuangou.png',
         name: '拼团专区',
-        url: '/pages/TEAM/team/team'
+        url: '/pages/TEAM/team/team',
+        indes: "2",
       },
+
+     
       {
         src: '../../../images/icon_home_zhekou.png',
         name: '预售专区',
-        url: '/pages/ADVANCE/advance/advance'
+        url: '/pages/ADVANCE/advance/advance',
+        indes: "3",
       },
+      // {
+      //   url: '/pages/MODULES/qiandao/qiandao',
+      //   src: '../../../images/icon_home_jifen.png',
+      //   name: '砍价专区',
+      //   indes: "3",
+      // },
       {
         url: '/pages/INTEGRAL/integral/integral',
         // src: '../../../images/icon_home_team.png',
-        src: '../../../images/icon_home_zhekoumiaosha.png',
-        name: '积分商城'
+        src: '../../../images/icon_home_jifen.png',
+        name: '积分商城',
+        indes: "4",
       },
       {
         url: '/pages/TAOKE/taokezq/taokezq',
         src: '../../../images/icon_home_cuxiao.png',
-        name: '淘客专区'
+        name: '淘客专区',
+        indes: "4",
       },
       // {
       //   url: 'appid',
@@ -56,23 +70,22 @@ Page({
       // },
       {
         url: '/pages/HOME/game/game',
-        src: '../../../images/icon_home_jifen.png',
-        name: '游戏抽奖'
+        src: '../../../images/icon_home_game.png',
+        name: '游戏抽奖',
+        indes: "4",
       },
       {
         src: '../../../images/icon_home_yuding.png',
         url: '/pages/MODULESNAV/hotel/hotel',
-        name: '酒店预定'
+        name: '酒店预定',
+        indes: "4",
       },
-      // {
-      //   url: '/pages/MODULES/qiandao/qiandao',
-      //   src: '../../../images/icon_home_kanjia.png',
-      //   name: '砍价专区'
-      // },
+ 
          {
         url: '/pages/MODULES/qiandao/qiandao',
         src: '../../../images/icon_home_kanjia.png',
-        name: '签到领奖'
+        name: '签到领奖',
+        indes: "4",
       },
       // {
       //   url: '/pages/TAOKE/taokequan/taokequan',
@@ -80,11 +93,12 @@ Page({
       //   name: '淘客quan'
       // },
 
-      {
-        url: '/pages/DOUHUO/douhuo/douhuo',
-        src: '../../../images/icon_home_kanjia.png',
-        name: '抖货'
-      },
+      // {
+      //   url: '/pages/DOUHUO/douhuo/douhuo',
+      //   src: '../../../images/icon_home_kanjia.png',
+      //   name: '抖货',
+      //   indes: "4",
+      // },
 
   
     ]
@@ -97,7 +111,7 @@ Page({
           return {
             name: item.name,
             money: parseInt(item.money),
-            condition: item.condition,
+            condition: parseInt(item.condition),
           }
         });
         const arr = this.data.coupons.concat(coupons);
@@ -143,7 +157,8 @@ Page({
   
 
 
-  onLoad() {
+  onLoad(e) {
+    wx.setStorageSync('hash', e.hash);
     this.couponList({ type: 1, p: 1 });
     console.log(app.token)
 
@@ -159,6 +174,16 @@ Page({
     // this.promotelist({ prom_type: 4 });
   },
   onShow() {
+    var ind = wx.getStorageSync("ind");    //取
+    if (ind){
+      this.setData({
+        banbenhao: ind,
+      })
+    }
+
+    
+
+
     app.wxAPI.showLoading('加载中...');
     homePage().then(({ status, result, msg }) => {
       app.wxAPI.hideLoading();

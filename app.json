@@ -17,6 +17,11 @@
     "pages/FENXIAO/tuandui/tuandui",
     "pages/FENXIAO/fenxiao/fenxiao",
 
+    "pages/DOUHUO/douhuo/douhuo",
+    "pages/DOUHUO/douhuouser/douhuouser",
+    "pages/DOUHUO/guanzhu/guanzhu",
+    "pages/DOUHUO/xiaoxi/xiaoxi",
+
     "pages/TYPE/type/type",
     "pages/ADVANCE/advance/advance",
     
@@ -74,14 +79,14 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#112061",
+    "navigationBarBackgroundColor": "#628DA3",
     "navigationBarTitleText": "美拉商城",
     "navigationBarTextStyle":"white",
-    "backgroundColor": "#000000"
+    "backgroundColor": "#EFEFF4"
   },
   "tabBar": {
     "color": "#BFBFBF",
-    "selectedColor": "#112061",
+    "selectedColor": "#628DA3",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [

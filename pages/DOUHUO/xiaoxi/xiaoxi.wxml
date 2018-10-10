@@ -1,0 +1,62 @@
+      <view class='nav_wrap flex_between'>
+        <view class='nav_item' wx:for="{{navs}}" wx:key>
+          <view class="nav_item_s {{activeType == item.cat_id ? 'selected' : ''}}" 
+          data-type="{{item.cat_id}}" bindtap='tabNavBar'>{{item.cat_name}}</view>
+        </view>
+      </view>
+
+
+<view class='mt-100'>
+  <view class='product_item flex_row' >
+    <view class='product_img'>
+      <image src=''></image>
+    </view>
+    <view class='product_context'>
+      <view class='product_text tx_ov2'>MinusOne</view>
+      <view class='product_inner flex_between'>
+        <view>
+          <view class='product_money'>关注了你</view>
+          <view class='collect_text color_gray'>9-13</view>
+        </view>
+        <image class='icon_collect' bindtap='collectFn' data-index="{{index}}"
+        src='../../../images/{{item.is_on_sale ? "icon_collect_t.png" : "icon_collect_f.png"}}'></image>
+      </view>
+    </view>
+  </view>
+
+    <view class='product_item flex_row' >
+    <view class='product_img'>
+      <image src=''></image>
+    </view>
+    <view class='product_context'>
+      <view class='product_text tx_ov2'>MinusOne</view>
+      <view class='product_inner flex_between'>
+        <view>
+          <view class='product_money'>关注了你</view>
+          <view class='collect_text color_gray'>9-13</view>
+        </view>
+        <image class='icon_collect' bindtap='collectFn' data-index="{{index}}"
+        src='../../../images/{{item.is_on_sale ? "icon_collect_t.png" : "icon_collect_f.png"}}'></image>
+      </view>
+    </view>
+  </view>
+
+    <view class='product_item flex_row' >
+    <view class='product_img'>
+      <image src=''></image>
+    </view>
+    <view class='product_context'>
+      <view class='product_text tx_ov2'>MinusOne</view>
+      <view class='product_inner flex_between'>
+        <view>
+          <view class='product_money'>关注了你</view>
+          <view class='collect_text color_gray'>9-13</view>
+        </view>
+        <image class='icon_collect' bindtap='collectFn' data-index="{{index}}"
+        src='../../../images/{{item.is_on_sale ? "icon_collect_t.png" : "icon_collect_f.png"}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+  
+

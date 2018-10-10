@@ -30,7 +30,7 @@
             <!-- <view class='color_gray' wx:if="{{goods.marketPrice}}" 
             style='text-decoration: line-through; font-size: 26rpx; margin-left: 15rpx;'>￥{{goods.marketPrice}}</view> -->
           </view>
-          <view class='detail_b'>
+          <view class='detail_b' wx:if="{{banbenhao>2}}">
               <button bindtap='fxalert'>分享</button>
           </view>
         </view>

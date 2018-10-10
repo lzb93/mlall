@@ -124,7 +124,7 @@ page {
 .footer .footer_btn { 
   -webkit-box-flex:1;
   line-height: 90rpx;
-  background: #BCC4C3;
+  background:rgb(3, 78, 163);
   font-size: 30rpx;
   color: #fff;
   text-align: center;

@@ -2,6 +2,7 @@
 @import '../../HOME/home/home.wxss';
 page {
   padding-top:0rpx;
+  background: #EFEFF4;
 
   padding-bottom: 100rpx;
   height: 100%;
@@ -336,7 +337,7 @@ page {
   padding: 15rpx;
 }
 .lv{
-  background: #112061;
+  background: #628DA3;
   color: #ffffff;
 }
 
@@ -347,7 +348,10 @@ text-align: center;
 line-height: 70rpx;
 font-size: 26rpx;
 background: #fff;
-color: #112061
+color: #628DA3
 
   
+}
+.footer{
+  z-index: 99
 }

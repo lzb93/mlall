@@ -7,6 +7,7 @@ Page({
     userInfo: '',
     from: '',
     id: '',
+    banbenhao:"",
     userNav: [
  
       {
@@ -36,22 +37,26 @@ Page({
       // }
     ],
     items: [
-      // {
-      //   name: '淘客中心',
-      //   src: '../../../images/icon_user_yongjin.png',
-      //   url: '/pages/TAOKE/taokehome/taokehome'
-      // },
+  
       {
         distribut:1,
         name: '分销中心',
         src: '../../../images/icon_user_yongjin.png',
-        url: '/pages/FENXIAO/fenxiao/fenxiao'
+        url: '/pages/FENXIAO/fenxiao/fenxiao',
+        indes:"4",
       },
       {
         distribut: 0,
         name: '成为分销商',
         src: '../../../images/icon_user_yongjin.png',
-        url: '/pages/HOME/jiaru/jiaru'
+        url: '/pages/HOME/jiaru/jiaru',
+        indes:"4",
+      },
+      {
+        name: '淘客中心',
+        src: '../../../images/icon_user_yongjin.png',
+        url: '/pages/TAOKE/taokehome/taokehome',
+        indes:"4",
       },
       // {
       //   name: '我的秒杀',
@@ -61,7 +66,8 @@ Page({
       {
         name: '我的拼团',
         src: '../../../images/icon_user_tuan.png',
-        url: '/pages/TEAM/order/order'
+        url: '/pages/TEAM/order/order',
+        indes: "2",
       },
       // {
       //   name: '我的预约',
@@ -71,12 +77,14 @@ Page({
       {
         name: '我的优惠券',
         src: '../../../images/icon_user_yhq.png',
-        url: '/pages/USER/notused/notused'
+        url: '/pages/USER/notused/notused',
+        indes: "1",
       },
       {
         name: '我的积分',
         src: '../../../images/icon_user_jifen.png',
-        url: '/pages/INTEGRAL/record/record'
+        url: '/pages/INTEGRAL/record/record',
+        indes: "4",
         // url: '/pages/INTEGRAL/integral/integral'
       },
       // {
@@ -87,17 +95,20 @@ Page({
       {
         name: '售后/换货',
         src: '../../../images/icon_user_help.png',
-        url: '/pages/USER/refund/refund'
+        url: '/pages/USER/refund/refund',
+        indes: "1",
       },
       {
         name: '商品收藏',
         src: '../../../images/icon_user_soucang.png',
-        url: '/pages/USER/collect/collect'
+        url: '/pages/USER/collect/collect',
+        indes: "1",
       },
-         {
-        name: 'WEBVIEW',
+      {
+        name: '3D图展',
         src: '../../../images/icon_user_kefu.png',
-           url: '/pages/USER/webview/webview'
+        url: '/pages/USER/webview/webview',
+        indes: "3",
       }
       // {
       //   name: '博饼小游戏',
@@ -109,11 +120,55 @@ Page({
       //   src: '../../../images/icon_user_kefu.png',
       //   url: '/pages/USER/notused/notused'
       // }
+    ],
+    banben:[
+      {
+        name: '特惠版',
+        type:"tehui",
+        ind:"1",
+      },
+      {
+        name: '基础版',
+        type: "jichu",
+        ind: "2",
+      },
+      {
+        name: '高级版',
+        type: "gaoji",
+        ind: "3",
+      },
+      {
+        name: '全能版',
+        type: "quannneg",
+        ind: "4",
+      },
     ]
   },
+
+  // 版本
+  banben(e){
+
+    // var hash = wx.getStorageSync("hash");    //取
+
+    // wx.clearStorage({          // 删
+    //   key: 'hash',
+    //   success: function (res) {
+    //     console.log("清楚缓存");
+    //   }
+    // })
+    const ind = e.currentTarget.dataset.index;
+    wx.setStorageSync('ind', ind);    //存
+    this.setData({
+      banbenhao: ind,
+    });
+  },
+
   onLoad(options) {
 
+    var ind = wx.getStorageSync("ind");    //取
+
     this.setData({ 
+      banbenhao:ind,
       userInfo: app.userInfo,
       from: options.from || '',
       id: options.id || '',

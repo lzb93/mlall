@@ -10,16 +10,11 @@ page {
   width: 100%;
   border-bottom: 1rpx solid #E5E5E5;
   background-color: #fff;
+  z-index: 999;
 }
 .nav_item {display: inline-block; font-size: 28rpx;}
 .nav_item .nav_item_s {height: 80rpx; margin: 0 25rpx; line-height: 80rpx; color: #B7B7B7;}
-.nav_item .nav_item_s.selected {
-  border-bottom: 4rpx solid #d3af6e;
-  color: #d3af6e;
-  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#E9BD6F), to(#806330));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+.nav_item .nav_item_s.selected {border-bottom: 4rpx solid #628DA3; color: #628DA3;}
 
 .order_item {
   margin-bottom: 20rpx;
@@ -94,4 +89,13 @@ page {
 .btn_cancel {
   border-color: #232323;
   color: #232323;
+}
+.pinlun{
+  position: absolute;
+  right: 0rpx;
+  margin-top: 160rpx;
+
+}
+.mb_80{
+  margin-bottom: 80rpx;
 }

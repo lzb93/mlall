@@ -57,7 +57,17 @@
   
 
   <view class='user_list'>
-    <view class='list_item flex_between' wx:for="{{items}}" wx:if="{{item.distribut!=1}}" wx:key bindtap='tabList' data-index="{{index}}">
+
+    <view class='list_item flex_between'>
+      <view class='tc flex_row'>
+        <!-- <image class='refund'  src='../../../images/icon_user_kefu.png'></image>  -->
+        <view class='item_text'>商城版本选择-</view>
+      </view>
+      <view class='{{banbenhao==item.ind? "color_red" : "color_gray"}}' style='font-size: 28rpx;' bindtap='banben'  wx:for="{{banben}}" wx:key data-index="{{item.ind}}">{{item.name}}</view>
+  
+    </view> 
+
+    <view class='list_item flex_between' wx:for="{{items}}" wx:if="{{item.distribut!=1&& banbenhao>=item.indes}}" wx:key bindtap='tabList' data-index="{{index}}">
       <view class='tc flex_row'>
           <image class='refund' wx:if="{{item.src}}" src='{{item.src}}'></image>  
         <view class='item_text'>{{item.name}}</view>

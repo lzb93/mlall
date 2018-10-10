@@ -8,8 +8,6 @@
     免费开店真的有钱赚！
   </view>
   <view class='erweima-img'>
-       <image class='' src='{{userInfo.head_pic}}'></image>
-
         <canvas hidden="{{canvasHidden}}" bindtap="previewImg"  canvas-id="mycanvas" class="qcode-image"/>
   </view>
 </view>

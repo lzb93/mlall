@@ -79,6 +79,7 @@ function html2json(html, bindName) {
     var index = 0;
     HTMLParser(html, {
         start: function (tag, attrs, unary) {
+
             //debug(tag, attrs, unary);
             // node for this element
             var node = {
@@ -155,7 +156,7 @@ function html2json(html, bindName) {
                 imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
                 // node.attr.src = app.http + imgUrl;
                 
-                if (imgUrl.search(RegExp("/http/"))) {
+              if (imgUrl.match(RegExp("/http/"))) {
                   node.attr.src = imgUrl;
                 }else{
                   node.attr.src = app.http + imgUrl;
@@ -207,6 +208,7 @@ function html2json(html, bindName) {
             //debug(tag);
             // merge into parent tag
             var node = bufArray.shift();
+
             if (node.tag !== tag) console.error('invalid state: mismatch end tag');
 
             //当有缓存source资源时于于video补上src资源
@@ -222,7 +224,14 @@ function html2json(html, bindName) {
                 if (parent.nodes === undefined) {
                     parent.nodes = [];
                 }
-                parent.nodes.push(node);
+               
+              if (node.attr.src.match(RegExp("/http/"))) {
+                  node.attr.src = node.attr.src;
+                } else {
+                node.attr.src = app.http + node.attr.src;
+                }
+              console.log(node);
+              parent.nodes.push(node);
             }
         },
         chars: function (text) {

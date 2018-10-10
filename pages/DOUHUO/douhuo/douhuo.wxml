@@ -1,0 +1,44 @@
+<!--pages/DOUHUO/douhuo/douhuo.wxml-->
+<import src="../../TEMPLATE/tabBar/tabBar.wxml" />
+<template is="tabBar" data="{{tabBar: bindData.tabBar}}" />
+<template is="special" data="{{special}}"/>
+<import src="../../../utils/wxParse/wxParse.wxml" />
+<scroll-view scroll-top="{{scrolltop}}">
+  <view>
+  <!-- <video class='douhuo-video' src='https://www.zhongxingyoya.com/public/upload/goods/2018/07-23/4242213f44baa774588c76aa007fd57f.mp4' loop='true' autoplay="true"></video> -->
+        <view class='videos'>
+          <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}" /> -->
+          <video src='{{http+video.video}}' loop="true" autoplay="true"></video>
+        </view>
+  </view>
+
+  <view class='dh-rnav'>
+    <view class='texts tx_ov2'>{{video.title}}</view>
+  </view>
+
+</scroll-view>
+
+<!-- <view class='dh-rnav'>
+   <view class='rnav-li'>
+      <image src='../../../images/icon_home_f.png'></image>
+      <view class='rnav-p'>优惠券</view>
+   </view>
+  <view class='rnav-li'>
+      <image src='../../../images/icon_home_f.png'></image>
+      <view class='rnav-p'>购物车</view>
+   </view>
+   <view class='rnav-li'>
+      <image src='../../../images/icon_home_f.png'></image>
+      <view class='rnav-p'>赞123</view>
+   </view>
+   <view class='rnav-li'>
+      <image src='../../../images/icon_home_f.png'></image>
+      <view class='rnav-p'>评论123</view>
+   </view>
+   <view class='rnav-li'>
+      <image src='../../../images/icon_home_f.png'></image>
+      <view class='rnav-p'>分享123</view>
+   </view> 
+
+
+</view> -->
